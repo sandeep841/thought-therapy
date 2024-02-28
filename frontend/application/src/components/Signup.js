@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+// frontend\client\src\components\Signup.js
+
 import './styles/Signup.css';
+import React, { useState } from 'react';
 
 const Signup = () => {
   const [username, setUsername] = useState('');
@@ -8,6 +10,7 @@ const Signup = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleSignupClick = async () => {
     try {
@@ -20,8 +23,14 @@ const Signup = () => {
       });
 
       if (response.ok) {
-        console.log('Signup successful');
-        // Handle successful signup, such as redirecting to login page
+        const responseData = await response.json();
+        setSuccessMessage(responseData.message);
+        // Optionally, you can reset the form fields here if needed
+        setUsername('');
+        setEmail('');
+        setDob('');
+        setPassword('');
+        setConfirmPassword('');
       } else {
         const errorMessage = await response.text();
         setError(errorMessage);
@@ -68,6 +77,7 @@ const Signup = () => {
       />
       <button onClick={handleSignupClick}>Signup</button>
       {error && <p style={{ color: 'red' }}>{error}</p>}
+      {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
     </div>
   );
 };

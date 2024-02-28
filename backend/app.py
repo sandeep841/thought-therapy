@@ -63,7 +63,8 @@ def signup():
     db.session.add(new_user)
     db.session.commit()
 
-    return jsonify(message='Signup successful')
+    return jsonify(status='success', message='Signup successful'), 200
+
 
 @app.route('/login', methods=['POST'])
 def login():
