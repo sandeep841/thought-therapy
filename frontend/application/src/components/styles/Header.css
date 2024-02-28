@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 1em;
+    color: white;
+  }
+  
+  .title {
+    margin: 0;
+  }
+  
+  .login-button,
+  .signup-button,
+  .logout-button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    margin: 0 0.5em;
+    cursor: pointer;
+  }
+  
+  .login-button.active,
+  .signup-button.active {
+    background-color: #777;
+  }
+  
+  .logout-button {
+    background-color: #e44d26;
+  }
+  
