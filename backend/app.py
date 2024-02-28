@@ -65,6 +65,24 @@ def signup():
 
     return jsonify(message='Signup successful')
 
+@app.route('/login', methods=['POST'])
+def login():
+    data = request.get_json()
+    username = data.get('username')
+    password = data.get('password')
+
+    user = User.query.filter_by(username=username).first()
+
+    try:
+        if user and bcrypt.check_password_hash(user.password, password):
+            return jsonify(message='Login successful')
+        else:
+            return jsonify(message='Invalid username or password'), 401
+
+    except Exception as e:
+        print(f"Error during login: {e}")
+        return jsonify(message='An unexpected error occurred. Please try again.'), 500
+
 if __name__ == "__main__":
     initialize_database()
     app.run(debug=True)
