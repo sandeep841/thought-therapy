@@ -1,8 +1,15 @@
+import pickle
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_cors import CORS
 from datetime import datetime, date
+import joblib
+from sklearn.svm import SVC
+
+
+# Import the SVM model
+svm_model = joblib.load('svm_model.pkl')
 
 app = Flask(__name__)
 CORS(app)
@@ -83,6 +90,19 @@ def login():
     except Exception as e:
         print(f"Error during login: {e}")
         return jsonify(message='An unexpected error occurred. Please try again.'), 500
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    data = request.get_json()
+    features = data.get('features')
+
+    # Ensure that the feature names and order match the SVM model's expectations
+    feature_values = [features[f'Q{i}A'] for i in range(1, 43)]
+    prediction = svm_model.predict([feature_values])
+
+    return jsonify(prediction=prediction[0])
+
+
 
 if __name__ == "__main__":
     initialize_database()
