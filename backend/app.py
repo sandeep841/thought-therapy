@@ -90,6 +90,8 @@ def login():
     except Exception as e:
         print(f"Error during login: {e}")
         return jsonify(message='An unexpected error occurred. Please try again.'), 500
+    
+app.route
 
 @app.route('/predict', methods=['POST'])
 def predict():
