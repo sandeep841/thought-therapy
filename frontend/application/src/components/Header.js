@@ -1,6 +1,5 @@
-// frontend\client\src\components\Header.js
-
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles/Header.css';
 
 const Header = ({ isLoggedIn, showLogin, setShowLogin, handleLogout }) => {
@@ -14,7 +13,9 @@ const Header = ({ isLoggedIn, showLogin, setShowLogin, handleLogout }) => {
 
   return (
     <div className="header">
-      <h2 className="title">Thought Therapy</h2>
+      <h2 className="title">
+        <Link to="/">Thought Therapy</Link>
+      </h2>
       {isLoggedIn ? (
         // Render logout button if user is logged in
         <button className="logout-button" onClick={handleLogout}>
@@ -27,13 +28,13 @@ const Header = ({ isLoggedIn, showLogin, setShowLogin, handleLogout }) => {
             className={`login-button ${showLogin ? 'active' : ''}`}
             onClick={handleLoginClick}
           >
-            Login
+            <Link to="/">Login</Link>
           </button>
           <button
             className={`signup-button ${showLogin ? '' : 'active'}`}
             onClick={handleSignupClick}
           >
-            Signup
+            <Link to="/">Signup</Link>
           </button>
         </div>
       )}

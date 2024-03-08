@@ -1,0 +1,54 @@
+/* Add this CSS to your stylesheet or in your component's style tag */
+.cards-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 150px;
+    margin-bottom: 100px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+.therapy-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 20px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    width: 20%;
+    height: 30%;
+    min-width: 150px;
+    min-height: 150px;
+  }
+  
+  .therapy-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .therapy-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .therapy-card h2 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .PageTitle{
+    margin-top: 10px;
+    padding: 70px;
+    text-align: center;
+    font-size: 70px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    background-image:url('C:\sk\projects\mind theraphy\frontend\application\src\assets\program_page_title.png') ;
+    background-size: cover; /* Adjust as needed */
+    background-position: center; /* Adjust as needed */
+    background-repeat: no-repeat;
+  }
