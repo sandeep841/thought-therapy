@@ -1,9 +1,13 @@
+// App.js
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MainPage from './components/MainPage';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import MainPage from './components/MainPage';
+import DepressionTherapy from './components/DepressionTherapy';
+import AnxietyTherapy from './components/AnxietyTherapy';
+import StressTherapy from './components/StressTherapy';
 import Header from './components/Header';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -28,18 +32,10 @@ function App() {
           handleLogout={handleLogout}
         />
         <Routes>
-          <Route
-            path="/"
-            element={
-              isLoggedIn ? (
-                <MainPage />
-              ) : showLogin ? (
-                <Login handleLogin={handleLogin} />
-              ) : (
-                <Signup />
-              )
-            }
-          />
+          <Route path="/" element={isLoggedIn ? <MainPage /> : showLogin ? <Login handleLogin={handleLogin} /> : <Signup />} />
+          <Route path="/depression-therapy" element={<DepressionTherapy />} />
+          <Route path="/anxiety-therapy" element={<AnxietyTherapy />} />
+          <Route path="/stress-therapy" element={<StressTherapy />} />
         </Routes>
       </div>
     </Router>

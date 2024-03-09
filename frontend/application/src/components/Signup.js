@@ -2,6 +2,7 @@
 
 import './styles/Signup.css';
 import React, { useState } from 'react';
+import FormImg from '../assets/login_page.png';
 
 const Signup = () => {
   const [username, setUsername] = useState('');
@@ -43,6 +44,10 @@ const Signup = () => {
   };
 
   return (
+    <div className='signup-page'>
+    <div className='form-image'>
+        <img src={FormImg} alt="login-page" />
+      </div>
     <div className='signup-form'>
       <h2>Signup</h2>
       <input
@@ -79,6 +84,7 @@ const Signup = () => {
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
     </div>
+    </div> 
   );
 };
 

@@ -1,33 +1,61 @@
+/*Header.css */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 1em;
-    color: white;
-  }
-  
-  .title {
-    margin: 0;
-  }
-  
-  .login-button,
-  .signup-button,
-  .logout-button {
-    background-color: #555;
-    color: white;
-    border: none;
-    padding: 0.5em 1em;
-    margin: 0 0.5em;
-    cursor: pointer;
-  }
-  
-  .login-button.active,
-  .signup-button.active {
-    background-color: #777;
-  }
-  
-  .logout-button {
-    background-color: #e44d26;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #323232, #97969699); /* Update to the background color you want */
+  padding: 5px;
+  padding-right: 15px;
+  color: white; /* Change the font color to white */
+}
+
+.title{
+  margin-left: 15px;
+}
+
+.h-btn{
+  text-decoration: none;
+  color: white;
+}
+
+.h-button:hover{
+  transform: scale(1.05);
+
+}
+
+
+.h-button {
+  background-color: #535353; /* Update to the button background color you want */
+  color: white; /* Change the button font color to white */
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.logout-button {
+  background-color: #7e1f1f; /* Update to the button background color you want */
+  color: white; /* Change the button font color to white */
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.logout-button:hover{
+  transform: scale(1.05);
+}
+.h-button.active,
+.h-button.active {
+  background-color: #323232; /* Update to the active button background color you want */
+}

@@ -1,4 +1,4 @@
-/* Add this CSS to your stylesheet or in your component's style tag */
+/*MainPage.css */
 .cards-section{
     display: flex;
     flex-wrap: wrap;
@@ -11,6 +11,7 @@
 }
 .therapy-card {
     border: 1px solid #ddd;
+    text-decoration: none;
     border-radius: 8px;
     margin: 20px;
     padding: 15px;

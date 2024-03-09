@@ -14,7 +14,7 @@ const Header = ({ isLoggedIn, showLogin, setShowLogin, handleLogout }) => {
   return (
     <div className="header">
       <h2 className="title">
-        <Link to="/">Thought Therapy</Link>
+      <Link to="/" className='h-btn'>Thought Therapy</Link>
       </h2>
       {isLoggedIn ? (
         // Render logout button if user is logged in
@@ -25,16 +25,16 @@ const Header = ({ isLoggedIn, showLogin, setShowLogin, handleLogout }) => {
         // Render login/signup buttons if user is not logged in
         <div>
           <button
-            className={`login-button ${showLogin ? 'active' : ''}`}
+            className={`h-button ${showLogin ? 'active' : ''}`}
             onClick={handleLoginClick}
           >
-            <Link to="/">Login</Link>
+            <Link to="/" className='h-btn'>Login</Link>
           </button>
           <button
-            className={`signup-button ${showLogin ? '' : 'active'}`}
+            className={`h-button ${showLogin ? '' : 'active'}`}
             onClick={handleSignupClick}
           >
-            <Link to="/">Signup</Link>
+            <Link to="/" className='h-btn'>Signup</Link>
           </button>
         </div>
       )}

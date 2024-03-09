@@ -1,3 +1,9 @@
+/*Signup.css*/
+.signup-page{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .signup-form {
     max-width: 300px;
     margin: 2em auto;
@@ -12,7 +18,7 @@
   }
   
   .signup-form input {
-    width: 100%;
+    width: 95%;
     margin-bottom: 1em;
     padding: 0.5em;
   }
@@ -35,3 +41,8 @@
     text-align: center;
   }
   
+  .form-image{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 8%;
+  }

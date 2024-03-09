@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import './styles/Login.css';
+import FormImg from '../assets/login_page.png';
 
 const Login = ({ handleLogin }) => {
   const [username, setUsername] = useState('');
@@ -34,6 +35,10 @@ const Login = ({ handleLogin }) => {
   };
 
   return (
+    <div className='login-page'>
+      <div className='form-image'>
+        <img src={FormImg} alt="login-page" />
+      </div>
     <div className={`login-form ${error ? 'shake' : ''}`}>
       <h2>Login</h2>
       <input
@@ -50,6 +55,7 @@ const Login = ({ handleLogin }) => {
       />
       <button onClick={handleLoginClick}>Login</button>
       {error && <p style={{ color: 'red' }}>{error}</p>}
+    </div>
     </div>
   );
 };

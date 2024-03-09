@@ -1,4 +1,6 @@
+// MainPage.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 import depressionImage from '../assets/depression_wrap.png';
 import anxietyImage from '../assets/anxiety.jpg';
 import stressImage from '../assets/stress.jpg';
@@ -6,26 +8,25 @@ import '../components/styles/MainPage.css';
 
 const MainPage = ({ handleLogout }) => {
   return (
-   <div>
+    <div>
+      <h1 className='PageTitle'>Programs</h1>
+      <div className='cards-section'>
+        <Link to="/depression-therapy" className="therapy-card">
+          <img src={depressionImage} alt="Depression Therapy" />
+          <h2>Depression Therapy</h2>
+        </Link>
 
-    <h1 className='PageTitle'>Programs</h1>
-    <div className='cards-section'>     
-      <div className="therapy-card">
-        <img src={depressionImage} alt="Depression Therapy" />
-        <h2>Depression Therapy</h2>
-      </div>
+        <Link to="/anxiety-therapy" className="therapy-card">
+          <img src={anxietyImage} alt="Anxiety Therapy" />
+          <h2>Anxiety Therapy</h2>
+        </Link>
 
-      <div className="therapy-card">
-        <img src={anxietyImage} alt="Anxiety Therapy" />
-        <h2>Anxiety Therapy</h2>
-      </div>
-
-      <div className="therapy-card">
-        <img src={stressImage} alt="Stress Therapy" />
-        <h2>Stress Therapy</h2>
+        <Link to="/stress-therapy" className="therapy-card">
+          <img src={stressImage} alt="Stress Therapy" />
+          <h2>Stress Therapy</h2>
+        </Link>
       </div>
     </div>
-   </div>
   );
 };
 
