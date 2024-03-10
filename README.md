@@ -1,4 +1,4 @@
-# Mind Therapy Project
+# Thought Therapy
 
 ## Overview
 
