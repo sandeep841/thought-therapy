@@ -7,10 +7,8 @@ from flask_cors import CORS
 from datetime import datetime, date
 import joblib
 from sklearn.svm import SVC
+import pandas as pd
 
-
-# Import the SVM model
-svm_model = joblib.load('svm_model.pkl')
 
 app = Flask(__name__)
 CORS(app)
@@ -94,17 +92,30 @@ def login():
     
 app.route
 
+with open('svm_model.pkl', 'rb') as file:
+    svm_model = pickle.load(file)
+
+# Define the feature columns used during training
+feature_columns = ['Q2A', 'Q4A', 'Q7A', 'Q9A', 'Q15A', 'Q19A', 'Q20A', 'Q23A', 'Q25A', 'Q28A', 'Q30A', 'Q36A', 'Q40A', 'Q41A']
+
 @app.route('/predict', methods=['POST'])
 def predict():
-    data = request.get_json()
-    features = data.get('features')
+    try:
+        # Get data from the frontend
+        data = request.get_json()
 
-    # Ensure that the feature names and order match the SVM model's expectations
-    feature_values = [features[f'Q{i}A'] for i in range(1, 43)]
-    prediction = svm_model.predict([feature_values])
+        # Create a DataFrame with the input data
+        new_data = pd.DataFrame(data)
 
-    return jsonify(prediction=prediction[0])
+        # Make predictions
+        predictions = svm_model.predict(new_data)
 
+        # Return the result to the frontend
+        prediction=predictions.tolist()
+        return jsonify(prediction)
+
+    except Exception as e:
+        return jsonify(error=str(e)), 500
 
 
 if __name__ == "__main__":
