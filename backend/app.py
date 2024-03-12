@@ -19,13 +19,13 @@ db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 
 class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    dob = db.Column(db.String(10), nullable=False)  # Store dob as string in dd/mm/yyyy format
+    user_id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), nullable=False)
+    email = db.Column(db.String(120), nullable=False, unique=True)
+    dob = db.Column(db.String(10))
     age = db.Column(db.Integer)
     password = db.Column(db.String(120), nullable=False)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    created_at = db.Column(db.DateTime)
 
     def __repr__(self):
         return f'<User {self.username}>'
@@ -64,8 +64,12 @@ def signup():
     # Hash the password
     hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
 
+    # Generate the user_id automatically starting from 1001
+    last_user_id = User.query.order_by(User.user_id.desc()).first()
+    user_id = 1001 if not last_user_id else last_user_id.user_id + 1
+
     # Create a new user
-    new_user = User(username=username, email=email, dob=dob, age=age, password=hashed_password)
+    new_user = User(user_id=user_id, username=username, email=email, dob=dob, age=age, password=hashed_password)
     db.session.add(new_user)
     db.session.commit()
 
@@ -94,9 +98,6 @@ app.route
 
 with open('svm_model.pkl', 'rb') as file:
     svm_model = pickle.load(file)
-
-# Define the feature columns used during training
-feature_columns = ['Q2A', 'Q4A', 'Q7A', 'Q9A', 'Q15A', 'Q19A', 'Q20A', 'Q23A', 'Q25A', 'Q28A', 'Q30A', 'Q36A', 'Q40A', 'Q41A']
 
 @app.route('/predict', methods=['POST'])
 def predict():
