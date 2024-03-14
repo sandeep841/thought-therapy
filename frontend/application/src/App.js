@@ -8,6 +8,7 @@ import DepressionTherapy from './components/DepressionTherapy';
 import AnxietyTherapy from './components/AnxietyTherapy';
 import StressTherapy from './components/StressTherapy';
 import Header from './components/Header';
+import Dashboard from './components/Dashboard';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -36,6 +37,7 @@ function App() {
           <Route path="/depression-therapy" element={<DepressionTherapy />} />
           <Route path="/anxiety-therapy" element={<AnxietyTherapy />} />
           <Route path="/stress-therapy" element={<StressTherapy />} />
+          <Route path="/dashboard" element={<Dashboard/>} />
         </Routes>
       </div>
     </Router>

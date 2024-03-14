@@ -1,6 +1,6 @@
 #app.py
 import pickle
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_cors import CORS
@@ -117,7 +117,13 @@ def predict():
 
     except Exception as e:
         return jsonify(error=str(e)), 500
+@app.route('/')
+def home():
+    return render_template('home.html')
 
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
 
 if __name__ == "__main__":
     initialize_database()

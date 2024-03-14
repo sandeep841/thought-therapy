@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './styles/Header.css';
 
 const Header = ({ isLoggedIn, showLogin, setShowLogin, handleLogout }) => {
+  const location = useLocation();
+
   const handleLoginClick = () => {
     setShowLogin(true);
   };
@@ -13,9 +15,18 @@ const Header = ({ isLoggedIn, showLogin, setShowLogin, handleLogout }) => {
 
   return (
     <div className="header">
+      <div className='menu-items'>
       <h2 className="title">
       <Link to="/" className='h-btn'>Thought Therapy</Link>
       </h2>
+
+      {isLoggedIn && (
+        <nav className='navigate'>
+        <Link to="/dashboard" className={`menu-button ${location.pathname === '/dashboard' ? 'active' : ''}`}>Dashboard</Link>
+        <Link to="/" className={`menu-button ${location.pathname === '/' ? 'active' : ''}`}>Programs</Link>
+      </nav>
+      )}
+      </div>
       {isLoggedIn ? (
         // Render logout button if user is logged in
         <button className="logout-button" onClick={handleLogout}>

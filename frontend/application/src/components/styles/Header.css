@@ -1,4 +1,4 @@
-/*Header.css */
+/* Header.css */
 .header {
   display: flex;
   justify-content: space-between;
@@ -9,20 +9,22 @@
   color: white; /* Change the font color to white */
 }
 
-.title{
+.menu-items{
+  display: flex;
+  align-items: center;
+}
+.title {
   margin-left: 15px;
 }
 
-.h-btn{
+.h-btn {
   text-decoration: none;
   color: white;
 }
 
-.h-button:hover{
+.h-button:hover {
   transform: scale(1.05);
-
 }
-
 
 .h-button {
   background-color: #535353; /* Update to the button background color you want */
@@ -52,10 +54,33 @@
   margin-left: 10px;
 }
 
-.logout-button:hover{
+.logout-button:hover {
   transform: scale(1.05);
 }
+
 .h-button.active,
-.h-button.active {
-  background-color: #323232; /* Update to the active button background color you want */
+.h-button.active,
+.menu-button.active {
+  background-color: #323131; /* Update to the active button background color you want */
+}
+
+.menu-button {
+  background-color: #535353; /* Update to the button background color you want */
+  color: white; /* Change the button font color to white */
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.menu-button:hover {
+  transform: scale(1.05);
+}
+
+.navigate {
+  margin-left: 5px; /* Adjust the margin as needed */
 }
