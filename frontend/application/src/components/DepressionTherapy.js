@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import depressionQuestions from '../components/DepressionQuestions';
+import './styles/DepressionTherapy.css'; // Import the CSS file
 
 const DepressionTherapy = () => {
-  // eslint-disable-next-line
   const navigate = useNavigate();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userResponses, setUserResponses] = useState(Array(depressionQuestions.length).fill(''));
@@ -38,7 +38,6 @@ const DepressionTherapy = () => {
       requestData[`${key}`] = [parseInt(userResponses[index])];
     });
 
-    // Assume you have a backend URL for prediction, replace it with your actual URL
     fetch('http://127.0.0.1:5000/predict', {
       method: 'POST',
       headers: {
@@ -49,17 +48,16 @@ const DepressionTherapy = () => {
       .then(response => response.json())
       .then(data => {
         console.log('Prediction result:', data);
-        // Optionally, you can redirect the user to the home page here
-        navigate('/');
+        navigate('/'); // Redirect to the main page after submitting
       })
       .catch(error => console.error('Error:', error));
   };
 
   return (
-    <div>
-      <h1>Depression Therapy </h1>
-      <div className="options-index">
-        <p className="option-desc">
+    <div className="container">
+      <h1 className="title">Depression Therapy</h1>
+      <div className="option-desc">
+        <p>
           0 = Did not apply to me at all.<br />
           1 = Applied to me to some degree, or some of the time.<br />
           2 = Applied to me to a considerable degree, or a good part of the time.<br />
@@ -67,66 +65,65 @@ const DepressionTherapy = () => {
         </p>
       </div>
 
-      <p>
+      <p className="question">
         Question {currentQuestionIndex + 1}:<br />
         &nbsp;&nbsp;&nbsp;{depressionQuestions[currentQuestionIndex]}
       </p>
 
-      {/* Options */}
-      <div>
-      <label>
+      <div className="options-container">
+        <label className="option-label">
           <input
             type="radio"
             value="0"
             checked={userResponses[currentQuestionIndex] === '0'}
             onChange={() => handleOptionSelect('0')}
+            className="option-input"
           />
           0
         </label>
-        <label>
+        <label className="option-label">
           <input
             type="radio"
             value="1"
             checked={userResponses[currentQuestionIndex] === '1'}
             onChange={() => handleOptionSelect('1')}
+            className="option-input"
           />
           1
         </label>
-        <label>
+        <label className="option-label">
           <input
             type="radio"
             value="2"
-            checked={
-              userResponses[currentQuestionIndex] === '2'
-            }
+            checked={userResponses[currentQuestionIndex] === '2'}
             onChange={() => handleOptionSelect('2')}
+            className="option-input"
           />
           2
         </label>
-        <label>
+        <label className="option-label">
           <input
             type="radio"
             value="3"
             checked={userResponses[currentQuestionIndex] === '3'}
             onChange={() => handleOptionSelect('3')}
+            className="option-input"
           />
           3
         </label>
       </div>
 
-      {/* Navigation buttons */}
-      <div>
-        <button onClick={handlePreviousQuestion} disabled={currentQuestionIndex === 0}>
+      <div className="nav-buttons">
+        <button className="nav-button" onClick={handlePreviousQuestion} disabled={currentQuestionIndex === 0}>
           Previous
         </button>
-        <button onClick={handleNextQuestion} disabled={currentQuestionIndex === depressionQuestions.length - 1}>
+        <button className="nav-button" onClick={handleNextQuestion} disabled={currentQuestionIndex === depressionQuestions.length - 1}>
           Next
         </button>
       </div>
 
-      {/* Submit button */}
       <div>
-        <button onClick={handleSubmit} disabled={!allQuestionsAnswered}>
+        <button className="submit-button" onClick={handleSubmit} disabled={!allQuestionsAnswered}>
           Submit
         </button>
       </div>

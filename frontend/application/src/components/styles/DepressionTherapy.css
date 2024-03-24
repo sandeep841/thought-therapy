@@ -1,0 +1,84 @@
+/* DepressionTherapy.css */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 24px;
+    color: #343a40;
+    margin-bottom: 20px;
+  }
+  
+  .option-desc {
+    color: #6c757d;
+  }
+  
+  .question {
+    font-size: 18px;
+    color: #212529;
+    margin-bottom: 20px;
+  }
+  
+  .options-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .option-label {
+    font-size: 16px;
+    color: #212529;
+    margin-right: 10px;
+  }
+  
+  .option-input {
+    margin-right: 5px;
+  }
+  
+  .nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .nav-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .submit-button {
+    display: block;
+    margin: 0 auto;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .submit-button:disabled {
+    opacity: 0.5; /* Lighten the button when disabled */
+  }
+  

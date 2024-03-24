@@ -1,6 +1,6 @@
 // App.js
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
 import MainPage from './components/MainPage';
 import Login from './components/Login';
 import Signup from './components/Signup';
@@ -19,9 +19,24 @@ function App() {
     setShowLogin(false);
   };
 
-  const handleLogout = () => {
-    setIsLoggedIn(false);
+  const handleLogout = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/logout', {
+        method: 'GET'
+      });
+
+      if (response.ok) {
+        setIsLoggedIn(false);
+        setShowLogin(false);
+        window.location.href = '/';
+      } else {
+        throw new Error('Logout failed');
+      }
+    } catch (error) {
+      console.error('Error during logout:', error);
+    }
   };
+
 
   return (
     <Router>

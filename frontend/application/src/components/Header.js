@@ -13,6 +13,10 @@ const Header = ({ isLoggedIn, showLogin, setShowLogin, handleLogout }) => {
     setShowLogin(false);
   };
 
+  const handleLogoutClick = () => {
+    handleLogout(); // Call the handleLogout function passed from App.js
+  };
+
   return (
     <div className="header">
       <div className='menu-items'>
@@ -29,7 +33,7 @@ const Header = ({ isLoggedIn, showLogin, setShowLogin, handleLogout }) => {
       </div>
       {isLoggedIn ? (
         // Render logout button if user is logged in
-        <button className="logout-button" onClick={handleLogout}>
+        <button className="logout-button" onClick={handleLogoutClick}>
           Logout
         </button>
       ) : (

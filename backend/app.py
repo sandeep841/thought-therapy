@@ -1,7 +1,9 @@
+# A Flask API that handles user signup, login, and authentication, along with a machine learning prediction endpoint.
 #app.py
 import pickle
 from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.exc import IntegrityError
 from flask_bcrypt import Bcrypt
 from flask_cors import CORS
 from datetime import datetime, date
@@ -17,6 +19,9 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
+
+class ActiveUser(db.Model):
+    user_id = db.Column(db.Integer, primary_key=True)
 
 class User(db.Model):
     user_id = db.Column(db.Integer, primary_key=True)
@@ -76,6 +81,7 @@ def signup():
     return jsonify(status='success', message='Signup successful'), 200
 
 
+
 @app.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
@@ -86,13 +92,50 @@ def login():
 
     try:
         if user and bcrypt.check_password_hash(user.password, password):
+            active_user = ActiveUser.query.filter_by(user_id=user.user_id).first()
+
+            if active_user:
+                # User is already active, update the existing entry
+                active_user.timestamp = datetime.now()  # Update the timestamp or any other field as needed
+            else:
+                # User is not active, create a new entry
+                active_user = ActiveUser(user_id=user.user_id)
+                db.session.add(active_user)
+
+            db.session.commit()
+
             return jsonify(message='Login successful')
         else:
             return jsonify(message='Invalid username or password'), 401
 
-    except Exception as e:
+    except IntegrityError as e:
+        db.session.rollback()
         print(f"Error during login: {e}")
         return jsonify(message='An unexpected error occurred. Please try again.'), 500
+    except Exception as e:
+        db.session.rollback()
+        print(f"Error during login: {e}")
+        return jsonify(message='An unexpected error occurred. Please try again.'), 500
+
+@app.route('/logout')
+def logout():
+    try:
+        # Get the active user's entry from the ActiveUser table
+        active_user = ActiveUser.query.first()
+        
+        if active_user:
+            # Delete the active user's entry from the ActiveUser table
+            db.session.delete(active_user)
+            db.session.commit()
+            return jsonify(message='Logout successful')
+        else:
+            return jsonify(message='No active user to logout'), 404
+
+    except Exception as e:
+        db.session.rollback()
+        print(f"Error during logout: {e}")
+        return jsonify(message='An unexpected error occurred. Please try again.'), 500
+
     
 app.route
 
@@ -117,13 +160,20 @@ def predict():
 
     except Exception as e:
         return jsonify(error=str(e)), 500
+
+    
 @app.route('/')
 def home():
     return render_template('home.html')
 
 @app.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html')
+    active_user = ActiveUser.query.first()
+    if active_user:
+        active_user_id = active_user.user_id
+        return jsonify(user_id=active_user_id)
+    else:
+        return jsonify(message='No active user'), 404
 
 if __name__ == "__main__":
     initialize_database()
