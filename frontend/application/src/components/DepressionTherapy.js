@@ -48,7 +48,7 @@ const DepressionTherapy = () => {
       .then(response => response.json())
       .then(data => {
         console.log('Prediction result:', data);
-        navigate('/'); // Redirect to the main page after submitting
+        navigate('/Dashboard'); // Redirect to the main page after submitting
       })
       .catch(error => console.error('Error:', error));
   };

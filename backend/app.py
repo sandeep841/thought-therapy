@@ -23,6 +23,12 @@ bcrypt = Bcrypt(app)
 class ActiveUser(db.Model):
     user_id = db.Column(db.Integer, primary_key=True)
 
+class SeverityLevels(db.Model):
+    user_id = db.Column(db.Integer, primary_key=True)
+    depression_level = db.Column(db.String(20))
+    anxiety_level = db.Column(db.String(20))
+    stress_level = db.Column(db.String(20))
+
 class User(db.Model):
     user_id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), nullable=False)
@@ -154,10 +160,39 @@ def predict():
         # Make predictions
         predictions = svm_model.predict(new_data)
 
-        # Return the result to the frontend
-        prediction=predictions.tolist()
-        return jsonify(prediction)
+        # Map predicted values to severity levels
+        severity_levels = {
+            0: 'Extremely Severe',
+            1: 'Severe',
+            2: 'Moderate',
+            3: 'Mild',
+            4: 'Normal'
+        }
 
+        # Get the predicted severity level based on the prediction value
+        predicted_severity = severity_levels[predictions[0]]  # Assuming predictions is a single value array
+
+        print(predicted_severity)
+
+        active_user = ActiveUser.query.first()
+        if active_user:
+            active_user_id = active_user.user_id
+        else:
+            active_user_id = None  # Handle the case where no active user is found
+        print(active_user_id)
+        existing_entry = SeverityLevels.query.filter_by(user_id=active_user_id).first()
+
+        if existing_entry:
+            # Update the existing entry with the predicted severity level
+            existing_entry.depression_level = predicted_severity
+        else:
+            # Create a new entry in the SeverityLevels table
+            new_entry = SeverityLevels(user_id=active_user_id, depression_level=predicted_severity)
+            db.session.add(new_entry)
+
+        db.session.commit()
+        return jsonify(message='Prediction stored successfully')
+    
     except Exception as e:
         return jsonify(error=str(e)), 500
 

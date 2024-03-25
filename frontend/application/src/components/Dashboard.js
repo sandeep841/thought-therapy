@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './styles/Dashboard.css'; // Import the CSS file
 
 const Dashboard = () => {
   const [userDetails, setUserDetails] = useState({ user_id: '', message: '' });
@@ -21,12 +22,15 @@ const Dashboard = () => {
 
   return (
     <div>
-      <h1>User Dashboard</h1>
+      <div className='activities'>
+      <h1>Activities</h1>
       {userDetails.message ? (
         <p>{userDetails.message}</p>
       ) : (
+        
         <p>User ID: {userDetails.user_id}</p>
       )}
+      </div>
     </div>
   );
 };
