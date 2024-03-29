@@ -1,6 +1,7 @@
 # A Flask API that handles user signup, login, and authentication, along with a machine learning prediction endpoint.
 #app.py
 import pickle
+import os
 from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError
@@ -145,58 +146,124 @@ def logout():
     
 app.route
 
-with open('svm_model.pkl', 'rb') as file:
-    svm_model = pickle.load(file)
+Depression_model_path = os.path.abspath('C:/sk/projects/mind theraphy/backend/models/Depression_svm_model.pkl')
 
-@app.route('/predict', methods=['POST'])
-def predict():
+with open(Depression_model_path, 'rb') as file:
+    Depression_svm_model = pickle.load(file)
+
+# Map predicted values to severity levels
+severity_levels = {
+    0: 'Extremely Severe',
+    1: 'Severe',
+    2: 'Moderate',
+    3: 'Mild',
+    4: 'Normal'
+}
+
+@app.route('/depression_predict', methods=['POST'])
+def depression_predict():
     try:
-        # Get data from the frontend
         data = request.get_json()
 
-        # Create a DataFrame with the input data
         new_data = pd.DataFrame(data)
 
-        # Make predictions
-        predictions = svm_model.predict(new_data)
-
-        # Map predicted values to severity levels
-        severity_levels = {
-            0: 'Extremely Severe',
-            1: 'Severe',
-            2: 'Moderate',
-            3: 'Mild',
-            4: 'Normal'
-        }
-
-        # Get the predicted severity level based on the prediction value
+        predictions = Depression_svm_model.predict(new_data)
+        
         predicted_severity = severity_levels[predictions[0]]  # Assuming predictions is a single value array
-
-        print(predicted_severity)
 
         active_user = ActiveUser.query.first()
         if active_user:
             active_user_id = active_user.user_id
         else:
-            active_user_id = None  # Handle the case where no active user is found
-        print(active_user_id)
+            return jsonify(error='No active user'), 404  # Handle the case where no active user is found
+        
         existing_entry = SeverityLevels.query.filter_by(user_id=active_user_id).first()
 
         if existing_entry:
-            # Update the existing entry with the predicted severity level
             existing_entry.depression_level = predicted_severity
         else:
-            # Create a new entry in the SeverityLevels table
             new_entry = SeverityLevels(user_id=active_user_id, depression_level=predicted_severity)
             db.session.add(new_entry)
 
         db.session.commit()
-        return jsonify(message='Prediction stored successfully')
-    
+        return jsonify(message="Depression severity stored")
+
     except Exception as e:
         return jsonify(error=str(e)), 500
 
+
+
+
+
+anxiety_model_path = os.path.abspath('C:/sk/projects/mind theraphy/backend/models/anxiety_svm_model.pkl')
+
+with open(anxiety_model_path, 'rb') as file:
+    anxiety_svm_model = pickle.load(file)
+
+@app.route('/AnxietyPredict', methods=['POST'])
+def AnxietyPredict():
+    try:
+        data = request.get_json()
+        new_data = pd.DataFrame(data)
+        predictions = anxiety_svm_model.predict(new_data)
+        predicted_severity = severity_levels[predictions[0]]  # Assuming predictions is a single value array
+
+        active_user = ActiveUser.query.first()
+        if active_user:
+            active_user_id = active_user.user_id
+        else:
+            return jsonify(error='No active user'), 404  # Handle the case where no active user is found
+        
+        existing_entry = SeverityLevels.query.filter_by(user_id=active_user_id).first()
+
+        if existing_entry:
+            existing_entry.anxiety_level = predicted_severity
+        else:
+            new_entry = SeverityLevels(user_id=active_user_id, anxiety_level=predicted_severity)
+            db.session.add(new_entry)
+
+        db.session.commit()
+        return jsonify(message="anxiety severity stored")
+
+    except Exception as e:
+        return jsonify(error=str(e)), 500
     
+
+
+stress_model_path = os.path.abspath('C:/sk/projects/mind theraphy/backend/models/stress_svm_model.pkl')
+
+with open(stress_model_path, 'rb') as file:
+    stress_svm_model = pickle.load(file)
+
+@app.route('/stressPredict', methods=['POST'])
+def stressPredict():
+    try:
+        data = request.get_json()
+        new_data = pd.DataFrame(data)
+        predictions = stress_svm_model.predict(new_data)
+        predicted_severity = severity_levels[predictions[0]]  # Assuming predictions is a single value array
+
+        active_user = ActiveUser.query.first()
+        if active_user:
+            active_user_id = active_user.user_id
+        else:
+            return jsonify(error='No active user'), 404  # Handle the case where no active user is found
+        
+        existing_entry = SeverityLevels.query.filter_by(user_id=active_user_id).first()
+
+        if existing_entry:
+            existing_entry.stress_level = predicted_severity
+        else:
+            new_entry = SeverityLevels(user_id=active_user_id, stress_level=predicted_severity)
+            db.session.add(new_entry)
+
+        db.session.commit()
+        return jsonify(message="Stress severity stored")
+
+    except Exception as e:
+        return jsonify(error=str(e)), 500
+
+
 @app.route('/')
 def home():
     return render_template('home.html')

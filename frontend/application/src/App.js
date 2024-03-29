@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
 import MainPage from './components/MainPage';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import DepressionTherapy from './components/DepressionTherapy';
-import AnxietyTherapy from './components/AnxietyTherapy';
-import StressTherapy from './components/StressTherapy';
+import DepressionTherapy from './components/programs/DepressionTherapy';
+import AnxietyTherapy from './components/programs/AnxietyTherapy';
+import StressTherapy from './components/programs/StressTherapy';
 import Header from './components/Header';
 import Dashboard from './components/Dashboard';
 

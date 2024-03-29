@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import depressionQuestions from '../components/DepressionQuestions';
-import './styles/DepressionTherapy.css'; // Import the CSS file
+import depressionQuestions from '../questions/DepressionQuestions';
+import '../styles/DepressionTherapy.css'; // Import the CSS file
 
 const DepressionTherapy = () => {
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ const DepressionTherapy = () => {
 
   const handleSubmit = () => {
     const featureKeys = [
-      'Q2A', 'Q4A', 'Q7A', 'Q9A', 'Q15A', 'Q19A', 'Q20A', 'Q23A', 'Q25A', 'Q28A', 'Q30A', 'Q36A', 'Q40A', 'Q41A'
+      'Q3A', 'Q5A', 'Q10A', 'Q13A', 'Q16A', 'Q17A', 'Q21A', 'Q24A', 'Q26A', 'Q31A', 'Q34A', 'Q37A', 'Q38A', 'Q42A'
     ];
 
     const requestData = {};
@@ -38,7 +38,7 @@ const DepressionTherapy = () => {
       requestData[`${key}`] = [parseInt(userResponses[index])];
     });
 
-    fetch('http://127.0.0.1:5000/predict', {
+    fetch('http://127.0.0.1:5000/depression_predict', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
