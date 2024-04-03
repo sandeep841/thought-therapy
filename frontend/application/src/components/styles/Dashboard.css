@@ -1,9 +1,88 @@
-.activities {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    align-items: center;
-  }
+/*Dashboard*/
+
+.main {
+  display: flex;
+}
+
+.dashboard-container {
+  width: auto;
+  margin-left: 260px;
+  flex-grow: 1;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  padding-left: 7px;
+}
+
+.welcome-message {
+  margin-top: 10px;
+  padding: 40px;
+  text-align: center;
+  font-size: 70px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  background-image: url("C:\sk\projects\mind theraphy\frontend\application\src\assets\program_page_title.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.sidebar {
+  position: fixed;
+  color: aliceblue;
+  width: 260px;
+  flex-shrink: 0;
+  background: linear-gradient(to bottom, #1e1d1d, #444343df);
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar-item {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.15s;
+}
+
+.sidebar-title {
+  cursor: pointer;
+  transition: transform 0.3s;
+  display: block;
+  padding: 0.5em;
+}
+
+.sidebar-title:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+/* Added styles for dashboard-container sections */
+
+.dashboard-container section {
+  height: fit-content;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.no-program-message {
+  font-size: 16px;
+  color: #555;
+  text-align: center;
+  margin-top: 50px;
+}
+
+#depression-section,
+#anxiety-section,
+#stress-section {
+  margin-bottom: 30px;
+}
+
+.task-title {
+  display: block;
+  margin-bottom: 10px;
+}

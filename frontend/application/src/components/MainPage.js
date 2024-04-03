@@ -1,16 +1,16 @@
 // MainPage.js
-import React from 'react';
-import { Link } from 'react-router-dom';
-import depressionImage from '../assets/depression_wrap.png';
-import anxietyImage from '../assets/anxiety.jpg';
-import stressImage from '../assets/stress.jpg';
-import '../components/styles/MainPage.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import depressionImage from "../assets/depression_wrap.png";
+import anxietyImage from "../assets/anxiety.jpg";
+import stressImage from "../assets/stress.jpg";
+import "../components/styles/MainPage.css";
 
-const MainPage = ({ handleLogout }) => {
+const MainPage = () => {
   return (
     <div>
-      <h1 className='PageTitle'>Programs</h1>
-      <div className='cards-section'>
+      <h1 className="PageTitle">Programs</h1>
+      <div className="cards-section">
         <Link to="/depression-therapy" className="therapy-card">
           <img src={depressionImage} alt="Depression Therapy" />
           <h2>Depression Therapy</h2>

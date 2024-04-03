@@ -273,9 +273,36 @@ def dashboard():
     active_user = ActiveUser.query.first()
     if active_user:
         active_user_id = active_user.user_id
-        return jsonify(user_id=active_user_id)
+        user = User.query.filter_by(user_id=active_user_id).first()
+        severity_levels = SeverityLevels.query.filter_by(user_id=active_user_id).first()
+        if user:
+            # Construct a dictionary with all user details and severity levels
+            user_details = {
+                'username': user.username,
+                'email': user.email,
+                'dob': user.dob,
+                'age': user.age
+            }
+    
+            severity_details = {}
+            if severity_levels:
+                severity_details = {
+                    'depression_level': severity_levels.depression_level,
+                    'anxiety_level': severity_levels.anxiety_level,
+                    'stress_level': severity_levels.stress_level
+                }
+
+            # Merge user_details and severity_details into a single dictionary
+            response_data = {**user_details, **severity_details}
+
+            return jsonify(response_data)
+        else:
+            return jsonify(message='User details not found'), 404
     else:
         return jsonify(message='No active user'), 404
+    
+
+
 
 if __name__ == "__main__":
     initialize_database()
