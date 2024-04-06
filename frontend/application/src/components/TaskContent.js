@@ -1,58 +1,128 @@
+//TaskContent.js
+
 import React from "react";
+import { Link } from "react-router-dom";
+import task_info from "../assets/tasks.json";
 
 const TaskContent = ({ userDetails }) => {
   const { depression_level, anxiety_level, stress_level } = userDetails;
 
   const renderTherapySections = () => {
     if (
-      depression_level !== null &&
-      depression_level !== undefined &&
-      anxiety_level !== null &&
-      anxiety_level !== undefined &&
-      stress_level !== null &&
-      stress_level !== undefined
+      (depression_level !== null && depression_level !== undefined) ||
+      (anxiety_level !== null && anxiety_level !== undefined) ||
+      (stress_level !== null && stress_level !== undefined)
     ) {
       return (
         <div className="dashboard-container">
           <h1 className="welcome-message">Welcome {userDetails.username}</h1>
-          <section id="depression-section">
-            <h2>Depression Therapy</h2>
-            <span className="task-title">task-1</span>
-            <span className="task-title">task-2</span>
-            <span className="task-title">task-3</span>
-            <span className="task-title">task-4</span>
-            <span className="task-title">task-5</span>
-            <span className="task-title">task-6</span>
-          </section>
-          <section id="anxiety-section">
-            <h2>Anxiety Therapy</h2>
-            <span className="task-title">task-1</span>
-            <span className="task-title">task-2</span>
-            <span className="task-title">task-3</span>
-            <span className="task-title">task-4</span>
-            <span className="task-title">task-5</span>
-            <span className="task-title">task-6</span>
-          </section>
-          <section id="stress-section">
-            <h2>Stress Therapy</h2>
-            <span className="task-title">task-1</span>
-            <span className="task-title">task-2</span>
-            <span className="task-title">task-3</span>
-            <span className="task-title">task-4</span>
-            <span className="task-title">task-5</span>
-            <span className="task-title">task-6</span>
-          </section>
+          {depression_level !== null && depression_level !== undefined && (
+            <section id="depression-section">
+              {task_info.map((task) => {
+                const { therapy_levels } = task;
+                const depressionLevelTasks = therapy_levels.find(
+                  (level) => level.therapy_level === depression_level
+                );
+
+                if (depressionLevelTasks && task.therapy === "depression") {
+                  return (
+                    <div key={depressionLevelTasks.therapy_level}>
+                      <h2>
+                        Depression Therapy- {depressionLevelTasks.therapy_level}
+                      </h2>
+                      {depressionLevelTasks.tasks.map((task) => (
+                        <div key={task.task_id}>
+                          <span>{task.task_title}</span>
+                          <p>{task.info[0].task_description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  );
+                } else {
+                  return null; // Handle the case where no tasks match the depression level or if therapy is not depression
+                }
+              })}
+            </section>
+          )}
+
+          {anxiety_level !== null && anxiety_level !== undefined && (
+            <section id="anxiety-section">
+              <h2>Anxiety Therapy</h2>
+              {task_info
+                .filter((task) => task.therapy === "anxiety") // Filter only anxiety tasks
+                .map((task) => {
+                  const { therapy_levels } = task;
+                  const anxietyLevelTasks = therapy_levels.find(
+                    (level) => level.therapy_level === anxiety_level
+                  );
+
+                  if (anxietyLevelTasks) {
+                    return (
+                      <div key={anxietyLevelTasks.therapy_level}>
+                        <h3>{anxietyLevelTasks.therapy_level}</h3>
+                        {anxietyLevelTasks.tasks.map((task) => (
+                          <div key={task.task_id}>
+                            <span>{task.task_title}</span>
+                            <p>{task.info[0].task_description}</p>
+                          </div>
+                        ))}
+                      </div>
+                    );
+                  } else {
+                    return null; // Handle the case where no tasks match the anxiety level
+                  }
+                })}
+            </section>
+          )}
+
+          {stress_level !== null && stress_level !== undefined && (
+            <section id="stress-section">
+              <h2>Stress Therapy</h2>
+              {task_info
+                .filter((task) => task.therapy === "stress") // Filter only stress tasks
+                .map((task) => {
+                  const { therapy_levels } = task;
+                  const stressLevelTasks = therapy_levels.find(
+                    (level) => level.therapy_level === stress_level
+                  );
+
+                  if (stressLevelTasks) {
+                    return (
+                      <div key={stressLevelTasks.therapy_level}>
+                        <h3>{stressLevelTasks.therapy_level}</h3>
+                        {stressLevelTasks.tasks.map((task) => (
+                          <div key={task.task_id}>
+                            <span>{task.task_title}</span>
+                            <p>{task.info[0].task_description}</p>
+                          </div>
+                        ))}
+                      </div>
+                    );
+                  } else {
+                    return null; // Handle the case where no tasks match the stress level
+                  }
+                })}
+            </section>
+          )}
         </div>
       );
     } else {
       return (
         <div className="dashboard-container">
           <h1 className="welcome-message">Welcome {userDetails.username}</h1>
-          <p className="no-program-message">
-            Looks like you have not yet taken a program.
-            <br />
-            You deserve to feel better. Take a program now.
-          </p>
+          <div className="no-program-message">
+            <h2>No active program!</h2>
+            <p>
+              Looks like you have not yet taken a program.
+              <br />
+              You deserve to feel better.
+              <br />
+              Take a program now.
+            </p>
+            <Link to="/" className="program-link">
+              Take program
+            </Link>
+          </div>
         </div>
       );
     }

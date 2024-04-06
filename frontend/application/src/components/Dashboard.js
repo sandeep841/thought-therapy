@@ -31,7 +31,7 @@ const Dashboard = () => {
 
   return (
     <div className="main">
-      <Sidebar />
+      <Sidebar userDetails={userDetails} />
       <TaskContent userDetails={userDetails} />
     </div>
   );

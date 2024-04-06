@@ -1,0 +1,1336 @@
+[
+  {
+    "therapy": "depression",
+    "therapy_levels": [
+      {
+        "therapy_level": "Normal",
+        "tasks": [
+          {
+            "task_id": "1",
+            "task_title": "Exercise regularly",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Normal Depression/1",
+                "task_description": "Physical activity has been shown to improve mood and reduce symptoms of depression."
+              }
+            ]
+          },
+          {
+            "task_id": "2",
+            "task_title": "Practice mindfulness meditation",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Normal Depression/2",
+                "task_description": "Mindfulness techniques can help individuals manage stress and improve overall well-being."
+              }
+            ]
+          },
+          {
+            "task_id": "3",
+            "task_title": "Engage in enjoyable hobbies",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Normal Depression/3",
+                "task_description": "Doing activities you enjoy can boost mood and provide a sense of accomplishment."
+              }
+            ]
+          },
+          {
+            "task_id": "4",
+            "task_title": "Maintain a healthy diet",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Normal Depression/4",
+                "task_description": "Eating nutritious foods can support overall mental health and help regulate mood."
+              }
+            ]
+          },
+          {
+            "task_id": "5",
+            "task_title": "Get enough sleep",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Normal Depression/5",
+                "task_description": "Prioritize good sleep hygiene to ensure adequate rest, as lack of sleep can worsen depressive symptoms."
+              }
+            ]
+          },
+          {
+            "task_id": "6",
+            "task_title": "Connect with supportive friends and family",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Normal Depression/6",
+                "task_description": "Social support can provide comfort and help individuals cope with feelings of depression."
+              }
+            ]
+          },
+          {
+            "task_id": "7",
+            "task_title": "Spend time in nature",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Normal Depression/7",
+                "task_description": "Being in natural environments has been linked to improved mood and reduced stress levels."
+              }
+            ]
+          },
+          {
+            "task_id": "8",
+            "task_title": "Practice gratitude",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Normal Depression/8",
+                "task_description": "Regularly expressing gratitude for the positive aspects of life can shift focus away from negative thoughts."
+              }
+            ]
+          },
+          {
+            "task_id": "9",
+            "task_title": "Listen to music",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Normal Depression/9",
+                "task_description": "Listening to music can have a therapeutic effect on mood and provide comfort during difficult times."
+              }
+            ]
+          },
+          {
+            "task_id": "10",
+            "task_title": "Limit screen time",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Normal Depression/10",
+                "task_description": "Excessive screen time, especially on social media, can contribute to feelings of inadequacy and worsen depressive symptoms."
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "therapy_level": "Mild",
+        "tasks": [
+          {
+            "task_id": "1",
+            "task_title": "Cognitive Behavioural Therapy (CBT)",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Mild Depression/1",
+                "task_description": "Participating in CBT sessions with a therapist can help individuals identify and challenge negative thought patterns."
+              }
+            ]
+          },
+          {
+            "task_id": "2",
+            "task_title": "Set achievable goals",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Mild Depression/2",
+                "task_description": "Breaking tasks into smaller, manageable goals can increase motivation and provide a sense of accomplishment."
+              }
+            ]
+          },
+          {
+            "task_id": "3",
+            "task_title": "Practice relaxation techniques",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Mild Depression/3",
+                "task_description": "Techniques such as deep breathing exercises or progressive muscle relaxation can help reduce stress and anxiety."
+              }
+            ]
+          },
+          {
+            "task_id": "4",
+            "task_title": "Volunteer or help others",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Mild Depression/4",
+                "task_description": "Engaging in altruistic activities can improve mood and provide a sense of purpose."
+              }
+            ]
+          },
+          {
+            "task_id": "5",
+            "task_title": "Limit alcohol and caffeine intake",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Mild Depression/5",
+                "task_description": "These substances can worsen symptoms of depression, so moderation is key."
+              }
+            ]
+          },
+          {
+            "task_id": "6",
+            "task_title": "Consider herbal supplements",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Mild Depression/6",
+                "task_description": "Some herbal supplements, such as St. John's Wort, may have mild antidepressant effects, but it's important to consult with a healthcare professional before starting any supplement regimen."
+              }
+            ]
+          },
+          {
+            "task_id": "7",
+            "task_title": "Practice problem-solving skills",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Mild Depression/7",
+                "task_description": "Developing effective problem-solving skills can increase feelings of control and reduce stress associated with daily challenges."
+              }
+            ]
+          },
+          {
+            "task_id": "8",
+            "task_title": "Pet therapy",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Mild Depression/8",
+                "task_description": "Spending time with animals, such as therapy dogs or cats, can provide comfort and emotional support."
+              }
+            ]
+          },
+          {
+            "task_id": "9",
+            "task_title": "Engage in creative expression",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Mild Depression/9",
+                "task_description": "Expressing oneself through art, writing, or music can serve as an outlet for emotions and promote self-discovery."
+              }
+            ]
+          },
+          {
+            "task_id": "10",
+            "task_title": "Attend educational workshops",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Mild Depression/10",
+                "task_description": "Participating in workshops or classes on topics of interest can foster personal growth and provide a sense of accomplishment."
+              }
+            ]
+          },
+          {
+            "task_id": "11",
+            "task_title": "Practice self-care",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Mild Depression/11",
+                "task_description": "Prioritize self-care activities such as taking baths, getting massages, or indulging in hobbies to nurture overall well-being."
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "therapy_level": "Moderate",
+        "tasks": [
+          {
+            "task_id": "1",
+            "task_title": "Group Therapy",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Moderate Depression/1",
+                "task_description": "Participating in group therapy sessions with others experiencing similar challenges can provide support and a sense of belonging."
+              }
+            ]
+          },
+          {
+            "task_id": "2",
+            "task_title": "Behavioral Activation",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Moderate Depression/2",
+                "task_description": "This therapy involves scheduling and engaging in enjoyable activities to increase positive reinforcement and counteract withdrawal and isolation."
+              }
+            ]
+          },
+          {
+            "task_id": "3",
+            "task_title": "Cognitive Restructuring",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Moderate Depression/3",
+                "task_description": "Identifying and challenging negative thought patterns can lead to more balanced thinking and reduce symptoms of depression."
+              }
+            ]
+          },
+          {
+            "task_id": "4",
+            "task_title": "Self-Care Practices",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Moderate Depression/4",
+                "task_description": "Engaging in activities that promote self-care, such as taking a warm bath, practicing good hygiene, or indulging in hobbies, can improve mood and well-being."
+              }
+            ]
+          },
+          {
+            "task_id": "5",
+            "task_title": "Stress Management",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Moderate Depression/5",
+                "task_description": "Learning and practicing stress management techniques such as time management, assertiveness training, and problem-solving skills can reduce feelings of overwhelm and anxiety."
+              }
+            ]
+          },
+          {
+            "task_id": "6",
+            "task_title": "Sleep Hygiene",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Moderate Depression/6",
+                "task_description": "Establishing good sleep habits, such as maintaining a regular sleep schedule and creating a relaxing bedtime routine, can improve mood and energy levels."
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "therapy_level": "Severe",
+        "tasks": [
+          {
+            "task_id": "1",
+            "task_title": "Medication",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Severe Depression/1",
+                "task_description": "Antidepressant medications prescribed by a healthcare professional can help alleviate symptoms of severe depression."
+              }
+            ]
+          },
+          {
+            "task_id": "2",
+            "task_title": "Attend support groups",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Severe Depression/2",
+                "task_description": "Joining a support group for individuals with depression can provide a sense of belonging and understanding."
+              }
+            ]
+          },
+          {
+            "task_id": "3",
+            "task_title": "Increase exposure to natural light",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Severe Depression/3",
+                "task_description": "Spending time outdoors or using light therapy lamps can help regulate circadian rhythms and improve mood."
+              }
+            ]
+          },
+          {
+            "task_id": "4",
+            "task_title": "Practice self-compassion",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Severe Depression/4",
+                "task_description": "Treat yourself with kindness and understanding, acknowledging that depression is a medical condition and not a personal failure."
+              }
+            ]
+          },
+          {
+            "task_id": "5",
+            "task_title": "Explore holistic approaches",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Severe Depression/5",
+                "task_description": "Options such as acupuncture, yoga, or art therapy may complement traditional treatment approaches."
+              }
+            ]
+          },
+          {
+            "task_id": "6",
+            "task_title": "Develop a daily routine",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Severe Depression/6",
+                "task_description": "Establishing structure in your daily life can provide stability and help manage symptoms of depression."
+              }
+            ]
+          },
+          {
+            "task_id": "7",
+            "task_title": "Dialectical Behavior Therapy (DBT)",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Severe Depression/7",
+                "task_description": "DBT combines cognitive-behavioral techniques with mindfulness practices to help individuals manage intense emotions and improve relationships."
+              }
+            ]
+          },
+          {
+            "task_id": "8",
+            "task_title": "Animal-assisted therapy",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Severe Depression/8",
+                "task_description": "Working with trained therapy animals under the guidance of a professional can promote relaxation and emotional regulation."
+              }
+            ]
+          },
+          {
+            "task_id": "9",
+            "task_title": "Practice progressive muscle relaxation",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Severe Depression/9",
+                "task_description": "Progressive muscle relaxation involves tensing and relaxing different muscle groups to reduce physical tension and promote relaxation."
+              }
+            ]
+          },
+          {
+            "task_id": "10",
+            "task_title": "Develop a crisis plan",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Severe Depression/10",
+                "task_description": "Creating a plan for managing crises or suicidal thoughts can provide a sense of control and safety during difficult moments."
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "therapy_level": "Extremely Severe",
+        "tasks": [
+          {
+            "task_id": "1",
+            "task_title": "Hospitalization",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Extreme Severe Depression/1.jpg",
+                "task_description": "In cases of extreme severe depression, hospitalization may be necessary to ensure safety and access intensive treatment."
+              }
+            ]
+          },
+          {
+            "task_id": "2",
+            "task_title": "Intensive outpatient programs",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Extreme Severe Depression/2.png",
+                "task_description": "Participating in structured outpatient programs that offer multiple therapy modalities and support can provide comprehensive treatment."
+              }
+            ]
+          },
+          {
+            "task_id": "3  ",
+            "task_title": "Psychiatric rehabilitation",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Extreme Severe Depression/3.jpg",
+                "task_description": "Programs focusing on skill-building, social support, and vocational training can help individuals regain functioning and independence."
+              }
+            ]
+          },
+          {
+            "task_id": "4",
+            "task_title": "Support from loved ones",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Extreme Severe Depression/4.avif",
+                "task_description": "Encouraging involvement of supportive family members or friends can provide practical assistance and emotional comfort during treatment."
+              }
+            ]
+          },
+          {
+            "task_id": "5",
+            "task_title": "Consider alternative medicine approaches",
+            "info": [
+              {
+                "task_icon": "../assets/Depression/Extreme Severe Depression/5",
+                "task_description": "Explore options like traditional Chinese medicine, Ayurveda, or homeopathy under the guidance of qualified practitioners."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "therapy": "anxiety",
+    "therapy_levels": [
+      {
+        "therapy_level": "Normal",
+        "tasks": [
+          {
+            "task_id": "1",
+            "task_title": "Mindfulness Meditation",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Normal Anxiety/1",
+                "task_description": "Engage in regular mindfulness practices to bring awareness to the present moment and reduce worries."
+              }
+            ]
+          },
+          {
+            "task_id": "2",
+            "task_title": "Physical Exercise",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Normal Anxiety/2",
+                "task_description": "Incorporate aerobic exercises like jogging, walking, or cycling to release endorphins and alleviate stress."
+              }
+            ]
+          },
+          {
+            "task_id": "3",
+            "task_title": "Progressive Muscle Relaxation (PMR)",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Normal Anxiety/3",
+                "task_description": "Learn and practice PMR techniques to reduce muscle tension and promote relaxation."
+              }
+            ]
+          },
+          {
+            "task_id": "4",
+            "task_title": "Deep Breathing Exercises",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Normal Anxiety/4",
+                "task_description": "Practice diaphragmatic breathing or belly breathing to activate the body's relaxation response."
+              }
+            ]
+          },
+          {
+            "task_id": "5",
+            "task_title": "Yoga",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Normal Anxiety/5",
+                "task_description": "Attend yoga classes or follow online tutorials focusing on poses and breathing techniques specifically aimed at reducing anxiety."
+              }
+            ]
+          },
+          {
+            "task_id": "6",
+            "task_title": "Creative Expression",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Normal Anxiety/6",
+                "task_description": "Engage in creative activities such as painting, drawing, or crafting to distract the mind and foster relaxation."
+              }
+            ]
+          },
+          {
+            "task_id": "7",
+            "task_title": "Social Support",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Normal Anxiety/7",
+                "task_description": "Spend time with supportive friends or family members to share feelings and gain perspective on anxious thoughts."
+              }
+            ]
+          },
+          {
+            "task_id": "8",
+            "task_title": "Journaling",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Normal Anxiety/8",
+                "task_description": "Keep a journal to express emotions, identify triggers, and track patterns of anxiety."
+              }
+            ]
+          },
+          {
+            "task_id": "9",
+            "task_title": "Healthy Lifestyle",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Normal Anxiety/9",
+                "task_description": "Maintain a balanced diet, prioritize adequate sleep, and limit caffeine and alcohol intake to support overall well-being."
+              }
+            ]
+          },
+          {
+            "task_id": "10",
+            "task_title": "Nature Walks",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Normal Anxiety/10",
+                "task_description": "Spend time outdoors in natural settings to benefit from the calming effects of nature."
+              }
+            ]
+          },
+          {
+            "task_id": "11",
+            "task_title": "Positive Affirmations",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Normal Anxiety/11",
+                "task_description": "Practice affirmations to challenge negative self-talk and cultivate a more positive mindset."
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "therapy_level": "Mild",
+        "tasks": [
+          {
+            "task_id": "1",
+            "task_title": "Cognitive Behavioural Therapy (CBT)",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Mild Anxiety/1",
+                "task_description": "Work with a therapist to learn cognitive restructuring techniques and develop coping strategies for managing anxious thoughts."
+              }
+            ]
+          },
+          {
+            "task_id": "2",
+            "task_title": "Relaxation Audio Recordings",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Mild Anxiety/2",
+                "task_description": "Listen to guided imagery or progressive relaxation recordings to induce a state of calmness."
+              }
+            ]
+          },
+          {
+            "task_id": "3",
+            "task_title": "Self-Compassion Practices",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Mild Anxiety/3",
+                "task_description": "Practice self-compassion exercises to cultivate kindness and understanding toward oneself during times of stress."
+              }
+            ]
+          },
+          {
+            "task_id": "4",
+            "task_title": "Aromatherapy",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Mild Anxiety/4",
+                "task_description": "Use essential oils like lavender, chamomile, or bergamot to create a calming atmosphere and reduce anxiety symptoms."
+              }
+            ]
+          },
+          {
+            "task_id": "5",
+            "task_title": "Grounding Techniques",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Mild Anxiety/5",
+                "task_description": "Use sensory grounding techniques, such as focusing on five things you can see, hear, touch, smell, and taste, to bring attention back to the present moment."
+              }
+            ]
+          },
+          {
+            "task_id": "6",
+            "task_title": "Volunteering",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Mild Anxiety/6",
+                "task_description": "Engage in volunteering activities to shift focus away from personal worries and gain a sense of purpose."
+              }
+            ]
+          },
+          {
+            "task_id": "7",
+            "task_title": "Limiting News Intake",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Mild Anxiety/7",
+                "task_description": "Reduce exposure to news and social media to avoid overwhelming information that may exacerbate anxiety."
+              }
+            ]
+          },
+          {
+            "task_id": "8",
+            "task_title": "Time Management Strategies",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Mild Anxiety/8",
+                "task_description": "Implement effective time management techniques to reduce stress related to deadlines and responsibilities."
+              }
+            ]
+          },
+          {
+            "task_id": "9",
+            "task_title": "Problem-Solving Skills",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Mild Anxiety/9",
+                "task_description": "Learn and apply problem-solving skills to address specific stressors and regain a sense of control."
+              }
+            ]
+          },
+          {
+            "task_id": "10",
+            "task_title": "Progressive Exposure",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Mild Anxiety/10",
+                "task_description": "Gradually expose yourself to feared situations or triggers in a controlled manner to desensitize anxiety responses."
+              }
+            ]
+          },
+          {
+            "task_id": "11",
+            "task_title": "Humour Therapy",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Mild Anxiety/11",
+                "task_description": "Incorporate humour into daily life through watching comedies, sharing jokes, or engaging in laughter yoga to promote relaxation."
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "therapy_level": "Moderate",
+        "tasks": [
+          {
+            "task_id": "1",
+            "task_title": "Cognitive Behavioural Therapy (CBT)",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Mild Anxiety/1",
+                "task_description": "Work with a therapist to learn cognitive restructuring techniques and develop coping strategies for managing anxious thoughts."
+              }
+            ]
+          },
+          {
+            "task_id": "2",
+            "task_title": "Relaxation Audio Recordings",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Mild Anxiety/2",
+                "task_description": "Listen to guided imagery or progressive relaxation recordings to induce a state of calmness."
+              }
+            ]
+          },
+          {
+            "task_id": "3",
+            "task_title": "Self-Compassion Practices",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Mild Anxiety/3",
+                "task_description": "Practice self-compassion exercises to cultivate kindness and understanding toward oneself during times of stress."
+              }
+            ]
+          },
+          {
+            "task_id": "4",
+            "task_title": "Aromatherapy",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Mild Anxiety/4",
+                "task_description": "Use essential oils like lavender, chamomile, or bergamot to create a calming atmosphere and reduce anxiety symptoms."
+              }
+            ]
+          },
+          {
+            "task_id": "5",
+            "task_title": "Grounding Techniques",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Mild Anxiety/5",
+                "task_description": "Use sensory grounding techniques, such as focusing on five things you can see, hear, touch, smell, and taste, to bring attention back to the present moment."
+              }
+            ]
+          },
+          {
+            "task_id": "6",
+            "task_title": "Volunteering",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Mild Anxiety/6",
+                "task_description": "Engage in volunteering activities to shift focus away from personal worries and gain a sense of purpose."
+              }
+            ]
+          },
+          {
+            "task_id": "7",
+            "task_title": "Limiting News Intake",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Mild Anxiety/7",
+                "task_description": "Reduce exposure to news and social media to avoid overwhelming information that may exacerbate anxiety."
+              }
+            ]
+          },
+          {
+            "task_id": "8",
+            "task_title": "Time Management Strategies",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Mild Anxiety/8",
+                "task_description": "Implement effective time management techniques to reduce stress related to deadlines and responsibilities."
+              }
+            ]
+          },
+          {
+            "task_id": "9",
+            "task_title": "Problem-Solving Skills",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Mild Anxiety/9",
+                "task_description": "Learn and apply problem-solving skills to address specific stressors and regain a sense of control."
+              }
+            ]
+          },
+          {
+            "task_id": "10",
+            "task_title": "Progressive Exposure",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Mild Anxiety/10",
+                "task_description": "Gradually expose yourself to feared situations or triggers in a controlled manner to desensitize anxiety responses."
+              }
+            ]
+          },
+          {
+            "task_id": "11",
+            "task_title": "Humour Therapy",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Mild Anxiety/11",
+                "task_description": "Incorporate humour into daily life through watching comedies, sharing jokes, or engaging in laughter yoga to promote relaxation."
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "therapy_level": "Severe",
+        "tasks": [
+          {
+            "task_id": "1",
+            "task_title": "Medication",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Severe Anxiety/1",
+                "task_description": "Consult with a psychiatrist for medication options such as selective serotonin reuptake inhibitors (SSRIs) or benzodiazepines to manage severe symptoms."
+              }
+            ]
+          },
+          {
+            "task_id": "2",
+            "task_title": "Structured Routine",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Severe Anxiety/2",
+                "task_description": "Establish a daily routine with set activities and schedules to provide a sense of predictability and stability."
+              }
+            ]
+          },
+          {
+            "task_id": "3",
+            "task_title": "Professional Therapy",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Severe Anxiety/3",
+                "task_description": "Engage in individual or group therapy sessions with a trained therapist specializing in anxiety disorders."
+              }
+            ]
+          },
+          {
+            "task_id": "4",
+            "task_title": "Coping Skills Training",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Severe Anxiety/4",
+                "task_description": "Participate in structured programs focusing on developing coping skills like problem-solving, assertiveness, and emotion regulation."
+              }
+            ]
+          },
+          {
+            "task_id": "5",
+            "task_title": "Biofeedback Therapy",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Severe Anxiety/5",
+                "task_description": "Explore biofeedback techniques to learn how to control physiological responses to stress through monitoring and feedback."
+              }
+            ]
+          },
+          {
+            "task_id": "6",
+            "task_title": "Dialectical Behaviour Therapy (DBT)",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Severe Anxiety/6",
+                "task_description": "Learn DBT skills such as mindfulness, distress tolerance, emotion regulation, and interpersonal effectiveness to manage intense emotions."
+              }
+            ]
+          },
+          {
+            "task_id": "7",
+            "task_title": "Virtual Reality Exposure Therapy (VRET)",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Severe Anxiety/7",
+                "task_description": "Undergo VRET sessions with a therapist to simulate exposure to anxiety-provoking situations in a controlled virtual environment."
+              }
+            ]
+          },
+          {
+            "task_id": "8",
+            "task_title": "Support Groups",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Severe Anxiety/8",
+                "task_description": "Join support groups or online forums to connect with others experiencing similar challenges and receive encouragement and advice."
+              }
+            ]
+          },
+          {
+            "task_id": "9",
+            "task_title": "Sleep Hygiene Practices",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Severe Anxiety/9",
+                "task_description": "Implement sleep hygiene strategies such as maintaining a consistent sleep schedule and creating a relaxing bedtime routine to improve sleep quality."
+              }
+            ]
+          },
+          {
+            "task_id": "10",
+            "task_title": "Assertiveness Training",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Severe Anxiety/10",
+                "task_description": "Learn assertiveness skills to communicate needs and boundaries effectively, reducing feelings of being overwhelmed by others' demands."
+              }
+            ]
+          },
+          {
+            "task_id": "11",
+            "task_title": "Professional Support",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Severe Anxiety/11",
+                "task_description": "Seek assistance from occupational therapists, social workers, or other mental health professionals for comprehensive support and intervention."
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "therapy_level": "Extreme Severe",
+        "tasks": [
+          {
+            "task_id": "1",
+            "task_title": "Inpatient Treatment",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Extreme Severe Anxiety/1",
+                "task_description": "Consider admission to a psychiatric hospital or residential treatment centre for intensive therapeutic support and monitoring."
+              }
+            ]
+          },
+          {
+            "task_id": "2",
+            "task_title": "Intensive Outpatient Programs (IOPs)",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Extreme Severe Anxiety/2",
+                "task_description": "Enrol in structured IOPs offering multiple therapy sessions per week along with psychiatric evaluation and medication management."
+              }
+            ]
+          },
+          {
+            "task_id": "3",
+            "task_title": "Psychodynamic Therapy",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Extreme Severe Anxiety/3",
+                "task_description": "Engage in psychodynamic therapy to explore unconscious conflicts and unresolved issues contributing to extreme anxiety."
+              }
+            ]
+          },
+          {
+            "task_id": "4",
+            "task_title": "Psychiatric Service Dogs",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Extreme Severe Anxiety/4",
+                "task_description": "Work with a trained psychiatric service dog to provide emotional support and assistance in managing anxiety symptoms."
+              }
+            ]
+          },
+          {
+            "task_id": "5",
+            "task_title": "Trauma-Informed Therapy",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Extreme Severe Anxiety/5",
+                "task_description": "Receive trauma-focused therapy to address underlying trauma contributing to extreme anxiety reactions."
+              }
+            ]
+          },
+          {
+            "task_id": "6",
+            "task_title": "24/7 Crisis Support",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Extreme Severe Anxiety/6",
+                "task_description": "Access crisis helplines or mobile crisis teams for immediate assistance during acute anxiety episodes."
+              }
+            ]
+          },
+          {
+            "task_id": "7",
+            "task_title": "Family Therapy",
+            "info": [
+              {
+                "task_icon": "../assets/Anxiety/Extreme Severe Anxiety/7",
+                "task_description": "Involve family members in therapy sessions to improve communication, resolve conflicts, and provide a supportive environment for recovery."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "therapy": "stress",
+    "therapy_levels": [
+      {
+        "therapy_level": "Normal",
+        "tasks": [
+          {
+            "task_id": "1",
+            "task_title": "Take a Walk",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Normal Stress/1",
+                "task_description": "Even a short walk outdoors can help clear your mind and reduce stress."
+              }
+            ]
+          },
+          {
+            "task_id": "2",
+            "task_title": "Listen to Music",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Normal Stress/2",
+                "task_description": "Listening to soothing music can lower cortisol levels and promote relaxation."
+              }
+            ]
+          },
+          {
+            "task_id": "3",
+            "task_title": "Practice Gratitude",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Normal Stress/3",
+                "task_description": "Take a few moments each day to write down things you're thankful for to shift your focus to the positive."
+              }
+            ]
+          },
+          {
+            "task_id": "4",
+            "task_title": "Spend Time with Pets",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Normal Stress/4",
+                "task_description": "Interacting with animals can reduce stress and improve mood."
+              }
+            ]
+          },
+          {
+            "task_id": "5",
+            "task_title": "Enjoy a Hobby",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Normal Stress/5",
+                "task_description": "Engage in activities you enjoy, such as painting, gardening, or cooking."
+              }
+            ]
+          },
+          {
+            "task_id": "6",
+            "task_title": "Laugh",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Normal Stress/6",
+                "task_description": "Watch a funny movie or spend time with friends who make you laugh to boost your mood."
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "therapy_level": "Mild",
+        "tasks": [
+          {
+            "task_id": "1",
+            "task_title": "Guided Imagery",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Mild Stress/1",
+                "task_description": "Visualize a peaceful scene or scenario to promote relaxation and reduce tension."
+              }
+            ]
+          },
+          {
+            "task_id": "2",
+            "task_title": "Progressive Muscle Relaxation (PMR)",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Mild Stress/2",
+                "task_description": "Practice tensing and then relaxing different muscle groups to release physical tension."
+              }
+            ]
+          },
+          {
+            "task_id": "3",
+            "task_title": "Limit Caffeine and Alcohol",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Mild Stress/3",
+                "task_description": "Reduce consumption of stimulants and depressants, as they can exacerbate stress."
+              }
+            ]
+          },
+          {
+            "task_id": "4",
+            "task_title": "Take a Warm Bath",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Mild Stress/4",
+                "task_description": "Soaking in a warm bath can soothe muscles and calm the mind."
+              }
+            ]
+          },
+          {
+            "task_id": "5",
+            "task_title": "Deep Breathing Exercises",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Mild Stress/5",
+                "task_description": "Practice deep breathing techniques like 4-7-8 breathing or belly breathing for relaxation."
+              }
+            ]
+          },
+          {
+            "task_id": "6",
+            "task_title": "Connect with Nature",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Mild Stress/6",
+                "task_description": "Spend time outdoors, whether it's going for a hike, sitting in a park, or simply taking in the scenery."
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "therapy_level": "Moderate",
+        "tasks": [
+          {
+            "task_id": "1",
+            "task_title": "Guided Imagery",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Mild Stress/1",
+                "task_description": "Visualize a peaceful scene or scenario to promote relaxation and reduce tension."
+              }
+            ]
+          },
+          {
+            "task_id": "2",
+            "task_title": "Progressive Muscle Relaxation (PMR)",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Mild Stress/2",
+                "task_description": "Practice tensing and then relaxing different muscle groups to release physical tension."
+              }
+            ]
+          },
+          {
+            "task_id": "3",
+            "task_title": "Limit Caffeine and Alcohol",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Mild Stress/3",
+                "task_description": "Reduce consumption of stimulants and depressants, as they can exacerbate stress."
+              }
+            ]
+          },
+          {
+            "task_id": "4",
+            "task_title": "Take a Warm Bath",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Mild Stress/4",
+                "task_description": "Soaking in a warm bath can soothe muscles and calm the mind."
+              }
+            ]
+          },
+          {
+            "task_id": "5",
+            "task_title": "Deep Breathing Exercises",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Mild Stress/5",
+                "task_description": "Practice deep breathing techniques like 4-7-8 breathing or belly breathing for relaxation."
+              }
+            ]
+          },
+          {
+            "task_id": "6",
+            "task_title": "Connect with Nature",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Mild Stress/6",
+                "task_description": "Spend time outdoors, whether it's going for a hike, sitting in a park, or simply taking in the scenery."
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "therapy_level": "Severe",
+        "tasks": [
+          {
+            "task_id": "1",
+            "task_title": "Journaling",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Severe Stress/1",
+                "task_description": "Write about your thoughts and feelings to gain clarity and perspective on stressful situations."
+              }
+            ]
+          },
+          {
+            "task_id": "2",
+            "task_title": "Seek Social Support",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Severe Stress/2",
+                "task_description": "Talk to friends or loved ones about what you're going through for emotional support."
+              }
+            ]
+          },
+          {
+            "task_id": "3",
+            "task_title": "Set Boundaries",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Severe Stress/3",
+                "task_description": "Learn to say no to additional responsibilities and prioritize self-care."
+              }
+            ]
+          },
+          {
+            "task_id": "4",
+            "task_title": "Practice Mindfulness Meditation",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Severe Stress/4",
+                "task_description": "Set aside time each day to focus on the present moment and cultivate awareness."
+              }
+            ]
+          },
+          {
+            "task_id": "5",
+            "task_title": "Engage in Creative Expression",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Severe Stress/5",
+                "task_description": "Express yourself through art, music, or writing to process emotions and reduce stress."
+              }
+            ]
+          },
+          {
+            "task_id": "6",
+            "task_title": "Establish a Routine",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Severe Stress/6",
+                "task_description": "Create a structured daily routine to provide a sense of stability and control."
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "therapy_level": "Extreme Severe",
+        "tasks": [
+          {
+            "task_id": "1",
+            "task_title": "Seek Professional Help",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Extreme Severe Stress/1",
+                "task_description": "Schedule an appointment with a therapist or counselor who can provide support and guidance."
+              }
+            ]
+          },
+          {
+            "task_id": "2",
+            "task_title": "Practice Self-Compassion",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Extreme Severe Stress/2",
+                "task_description": "Be kind to yourself and practice self-care activities, such as taking breaks and engaging in activities you enjoy."
+              }
+            ]
+          },
+          {
+            "task_id": "3",
+            "task_title": "Join a Support Group",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Extreme Severe Stress/3",
+                "task_description": "Connect with others who are experiencing similar challenges to share experiences and coping strategies."
+              }
+            ]
+          },
+          {
+            "task_id": "4",
+            "task_title": "Limit Exposure to Stressors",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Extreme Severe Stress/4",
+                "task_description": "Identify and minimize exposure to triggers or stress-inducing situations whenever possible."
+              }
+            ]
+          },
+          {
+            "task_id": "5",
+            "task_title": "Engage in Relaxation Techniques",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Extreme Severe Stress/5",
+                "task_description": "Practice relaxation techniques such as guided imagery, progressive muscle relaxation, or biofeedback."
+              }
+            ]
+          },
+          {
+            "task_id": "6",
+            "task_title": "Consider Medication",
+            "info": [
+              {
+                "task_icon": "../assets/Stress/Extreme Severe Stress/6",
+                "task_description": "Consult with a healthcare professional about the possibility of medication to help manage severe symptoms of stress, such as anxiety or depression."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

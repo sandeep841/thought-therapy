@@ -13,7 +13,7 @@ import "./components/styles/App.css";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [showLogin, setShowLogin] = useState(false);
+  const [showLogin, setShowLogin] = useState(true);
 
   const handleLogin = () => {
     setIsLoggedIn(true);
