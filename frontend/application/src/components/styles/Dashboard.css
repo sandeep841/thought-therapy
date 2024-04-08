@@ -89,11 +89,6 @@
   margin-bottom: 30px;
 }
 
-.task-title {
-  display: block;
-  margin-bottom: 10px;
-}
-
 .program-link:hover {
   transform: scale(1.05);
 }
@@ -110,4 +105,33 @@
   cursor: pointer;
   border-radius: 5px;
   margin-left: 10px;
+}
+
+.task-section:hover {
+  /* border: 3px outset #3d3c3c6f; */
+  background-color: #76777c1f;
+  cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.task-section {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.24);
+  margin: 5px 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.task-title {
+  font-size: larger;
+  font-weight: 500;
+}
+
+.task-description {
+  padding: 0.25em;
+  height: 0;
+  overflow: hidden;
+}
+
+.task-description.expanded {
+  height: auto;
 }

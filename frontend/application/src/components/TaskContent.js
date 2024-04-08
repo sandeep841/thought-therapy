@@ -1,11 +1,12 @@
 //TaskContent.js
 
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import task_info from "../assets/tasks.json";
 
 const TaskContent = ({ userDetails }) => {
   const { depression_level, anxiety_level, stress_level } = userDetails;
+  const [expanded, setExpanded] = useState(false);
 
   const renderTherapySections = () => {
     if (
@@ -31,9 +32,17 @@ const TaskContent = ({ userDetails }) => {
                         Depression Therapy- {depressionLevelTasks.therapy_level}
                       </h2>
                       {depressionLevelTasks.tasks.map((task) => (
-                        <div key={task.task_id}>
-                          <span>{task.task_title}</span>
-                          <p>{task.info[0].task_description}</p>
+                        <div
+                          className={`task-section`}
+                          key={task.task_id}
+                          onClick={() => setExpanded(!expanded)}
+                        >
+                          <span className="task-title">{task.task_title}</span>
+                          <TaskDescription
+                            taskDescription={task.info[0].task_description}
+                            taskIcon={task.info[0].task_icon}
+                            expanded={expanded}
+                          />
                         </div>
                       ))}
                     </div>
@@ -44,7 +53,6 @@ const TaskContent = ({ userDetails }) => {
               })}
             </section>
           )}
-
           {anxiety_level !== null && anxiety_level !== undefined && (
             <section id="anxiety-section">
               <h2>Anxiety Therapy</h2>
@@ -132,3 +140,14 @@ const TaskContent = ({ userDetails }) => {
 };
 
 export default TaskContent;
+
+const TaskDescription = ({ taskDescription, taskIcon, expanded }) => {
+  return (
+    <div>
+      <div className={`task-description ${expanded ? "expanded" : ""}`}>
+        {/* <img src={taskIcon} alt="Task Icon" /> */}
+        <p>{taskDescription}</p>
+      </div>
+    </div>
+  );
+};
