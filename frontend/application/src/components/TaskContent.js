@@ -1,12 +1,27 @@
 //TaskContent.js
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import task_info from "../assets/tasks.json";
+import axios from "axios";
 
 const TaskContent = ({ userDetails }) => {
   const { depression_level, anxiety_level, stress_level } = userDetails;
-  const [expanded, setExpanded] = useState(false);
+  const [expandedTasks, setExpandedTasks] = useState({});
+  const [depressionTasks, setDepressionTasks] = useState({});
+
+  useEffect(() => {
+    if (userDetails && userDetails.depression_tasks) {
+      setDepressionTasks(userDetails.depression_tasks);
+    }
+  }, [userDetails]);
+
+  const toggleTaskExpansion = (taskId) => {
+    setExpandedTasks((prevExpandedTasks) => ({
+      ...prevExpandedTasks,
+      [taskId]: !prevExpandedTasks[taskId],
+    }));
+  };
 
   const renderTherapySections = () => {
     if (
@@ -33,15 +48,27 @@ const TaskContent = ({ userDetails }) => {
                       </h2>
                       {depressionLevelTasks.tasks.map((task) => (
                         <div
-                          className={`task-section`}
+                          className={`task-section ${
+                            expandedTasks[task.task_id] ? "expanded" : ""
+                          }`}
                           key={task.task_id}
-                          onClick={() => setExpanded(!expanded)}
+                          onClick={() => toggleTaskExpansion(task.task_id)}
                         >
+                          <i
+                            className={`bi bi-check-circle-fill ${
+                              depressionTasks[`task${task.task_id}`]
+                                ? "done"
+                                : ""
+                            }`}
+                          ></i>
                           <span className="task-title">{task.task_title}</span>
                           <TaskDescription
                             taskDescription={task.info[0].task_description}
                             taskIcon={task.info[0].task_icon}
-                            expanded={expanded}
+                            expanded={expandedTasks[task.task_id]}
+                            user_id={userDetails.user_id}
+                            taskId={task.task_id}
+                            therapyType="depression"
                           />
                         </div>
                       ))}
@@ -136,18 +163,55 @@ const TaskContent = ({ userDetails }) => {
     }
   };
 
+  const TaskDescription = ({
+    taskDescription,
+    taskIcon,
+    expanded,
+    user_id,
+    taskId,
+    therapyType,
+  }) => {
+    return (
+      <div>
+        <div className={`task-description ${expanded ? "expanded" : ""}`}>
+          <div>
+            <i class="bi bi-quote quote"></i>
+            <p>{taskDescription}</p>
+            <i class="bi bi-quote right quote-right quote"></i>
+            {/* <img src={taskIcon} alt="Task Icon" /> */}
+          </div>
+          <span
+            className="mark-button"
+            onClick={() => markTaskAsComplete(user_id, taskId, therapyType)}
+          >
+            Mark as Complete
+          </span>
+        </div>
+      </div>
+    );
+  };
+
+  const markTaskAsComplete = async (user_id, taskId, therapyType) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/mark-task-complete",
+        {
+          user_id: user_id,
+          task_id: taskId,
+          therapy_type: therapyType,
+        }
+      );
+      console.log(response.data.message); // Log the response message
+      setDepressionTasks((prevTasks) => ({
+        ...prevTasks,
+        [`task${taskId}`]: true,
+      }));
+    } catch (error) {
+      console.error("Error marking task as complete:", error);
+    }
+  };
+
   return renderTherapySections();
 };
 
 export default TaskContent;
-
-const TaskDescription = ({ taskDescription, taskIcon, expanded }) => {
-  return (
-    <div>
-      <div className={`task-description ${expanded ? "expanded" : ""}`}>
-        {/* <img src={taskIcon} alt="Task Icon" /> */}
-        <p>{taskDescription}</p>
-      </div>
-    </div>
-  );
-};

@@ -124,14 +124,59 @@
 .task-title {
   font-size: larger;
   font-weight: 500;
+  margin-left: 10px;
+}
+.task-description div {
+  display: flex;
 }
 
 .task-description {
+  display: flex;
+  flex-direction: column;
   padding: 0.25em;
   height: 0;
   overflow: hidden;
+  transition: height 0.3s ease;
+  align-items: center;
 }
 
 .task-description.expanded {
   height: auto;
+}
+
+.task-section.expanded {
+  margin-top: 15px;
+  border-left: 6px solid #3d3c3cbd;
+  transform: scale(1.04);
+  transition: 0.3s;
+}
+.quote {
+  margin-top: 10px;
+}
+.quote-right {
+  transform: rotateY(180deg);
+}
+
+.mark-button {
+  background-color: #535353; /* Update to the button background color you want */
+  color: white; /* Change the button font color to white */
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.mark-button:hover {
+  transform: scale(1.02);
+  background-color: #3f3f3f;
+}
+
+.bi-check-circle-fill.done {
+  color: greenyellow;
+  font-size: 20px;
+}
+
+.bi-check-circle-fill {
+  color: rgba(172, 255, 47, 0);
+  font-size: 20px;
 }

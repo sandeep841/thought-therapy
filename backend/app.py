@@ -24,6 +24,57 @@ bcrypt = Bcrypt(app)
 class ActiveUser(db.Model):
     user_id = db.Column(db.Integer, primary_key=True)
 
+class DepressionTasks(db.Model):
+    user_id = db.Column(db.Integer, primary_key=True)
+    task1 = db.Column(db.Boolean, default=False)
+    task2 = db.Column(db.Boolean, default=False)
+    task3 = db.Column(db.Boolean, default=False)
+    task4 = db.Column(db.Boolean, default=False)
+    task5 = db.Column(db.Boolean, default=False)
+    task6 = db.Column(db.Boolean, default=False)
+    task7 = db.Column(db.Boolean, default=False)
+    task8 = db.Column(db.Boolean, default=False)
+    task9 = db.Column(db.Boolean, default=False)
+    task10 = db.Column(db.Boolean, default=False)
+    task11 = db.Column(db.Boolean, default=False)
+    task12 = db.Column(db.Boolean, default=False)
+    task13 = db.Column(db.Boolean, default=False)
+    task14 = db.Column(db.Boolean, default=False)
+
+class AnxietyTasks(db.Model):
+    user_id = db.Column(db.Integer, primary_key=True)
+    task1 = db.Column(db.Boolean, default=False)
+    task2 = db.Column(db.Boolean, default=False)
+    task3 = db.Column(db.Boolean, default=False)
+    task4 = db.Column(db.Boolean, default=False)
+    task5 = db.Column(db.Boolean, default=False)
+    task6 = db.Column(db.Boolean, default=False)
+    task7 = db.Column(db.Boolean, default=False)
+    task8 = db.Column(db.Boolean, default=False)
+    task9 = db.Column(db.Boolean, default=False)
+    task10 = db.Column(db.Boolean, default=False)
+    task11 = db.Column(db.Boolean, default=False)
+    task12 = db.Column(db.Boolean, default=False)
+    task13 = db.Column(db.Boolean, default=False)
+    task14 = db.Column(db.Boolean, default=False)
+
+class StressTasks(db.Model):
+    user_id = db.Column(db.Integer, primary_key=True)
+    task1 = db.Column(db.Boolean, default=False)
+    task2 = db.Column(db.Boolean, default=False)
+    task3 = db.Column(db.Boolean, default=False)
+    task4 = db.Column(db.Boolean, default=False)
+    task5 = db.Column(db.Boolean, default=False)
+    task6 = db.Column(db.Boolean, default=False)
+    task7 = db.Column(db.Boolean, default=False)
+    task8 = db.Column(db.Boolean, default=False)
+    task9 = db.Column(db.Boolean, default=False)
+    task10 = db.Column(db.Boolean, default=False)
+    task11 = db.Column(db.Boolean, default=False)
+    task12 = db.Column(db.Boolean, default=False)
+    task13 = db.Column(db.Boolean, default=False)
+    task14 = db.Column(db.Boolean, default=False)
+
 class SeverityLevels(db.Model):
     user_id = db.Column(db.Integer, primary_key=True)
     depression_level = db.Column(db.String(20))
@@ -41,6 +92,7 @@ class User(db.Model):
 
     def __repr__(self):
         return f'<User {self.username}>'
+
 
 def calculate_age(dob):
     today = date.today()
@@ -184,6 +236,9 @@ def depression_predict():
         else:
             new_entry = SeverityLevels(user_id=active_user_id, depression_level=predicted_severity)
             db.session.add(new_entry)
+        
+        depression_task_entry = DepressionTasks(user_id=active_user_id)
+        db.session.add(depression_task_entry)
 
         db.session.commit()
         return jsonify(message="Depression severity stored")
@@ -222,6 +277,9 @@ def AnxietyPredict():
             new_entry = SeverityLevels(user_id=active_user_id, anxiety_level=predicted_severity)
             db.session.add(new_entry)
 
+        anxiety_task_entry = AnxietyTasks(user_id=active_user_id)
+        db.session.add(anxiety_task_entry)
+
         db.session.commit()
         return jsonify(message="anxiety severity stored")
 
@@ -257,6 +315,9 @@ def stressPredict():
             new_entry = SeverityLevels(user_id=active_user_id, stress_level=predicted_severity)
             db.session.add(new_entry)
 
+        stress_task_entry = StressTasks(user_id = active_user_id)
+        db.session.add(stress_task_entry)
+
         db.session.commit()
         return jsonify(message="Stress severity stored")
 
@@ -275,6 +336,10 @@ def dashboard():
         active_user_id = active_user.user_id
         user = User.query.filter_by(user_id=active_user_id).first()
         severity_levels = SeverityLevels.query.filter_by(user_id=active_user_id).first()
+        depression_tasks = DepressionTasks.query.filter_by(user_id=active_user_id).first()
+        anxiety_tasks = AnxietyTasks.query.filter_by(user_id=active_user_id).first()
+        stress_tasks = StressTasks.query.filter_by(user_id=active_user_id).first()
+        
         if user:
             # Construct a dictionary with all user details and severity levels
             user_details = {
@@ -292,15 +357,61 @@ def dashboard():
                     'stress_level': severity_levels.stress_level
                 }
 
-            # Merge user_details and severity_details into a single dictionary
-            response_data = {**user_details, **severity_details}
+            # Construct a dictionary with tasks details
+            tasks_details = {}
+            if depression_tasks:
+                tasks_details['depression_tasks'] = {
+                    f'task{i}': getattr(depression_tasks, f'task{i}')
+                    for i in range(1, 15)
+                }
+            if anxiety_tasks:
+                tasks_details['anxiety_tasks'] = {
+                    f'task{i}': getattr(anxiety_tasks, f'task{i}')
+                    for i in range(1, 15)
+                }
+            if stress_tasks:
+                tasks_details['stress_tasks'] = {
+                    f'task{i}': getattr(stress_tasks, f'task{i}')
+                    for i in range(1, 15)
+                }
+            
+            # Merge user_details, severity_details, and tasks_details into a single dictionary
+            response_data = {**user_details, **severity_details, **tasks_details}
 
             return jsonify(response_data)
         else:
             return jsonify(message='User details not found'), 404
     else:
         return jsonify(message='No active user'), 404
-    
+
+from flask import request
+
+@app.route("/mark-task-complete", methods=["POST"])
+def mark_task_complete():
+    data = request.get_json()
+    active_user = ActiveUser.query.first()
+    active_user_id = active_user.user_id
+    user_id = active_user_id
+    task_id = data.get("task_id")
+    therapy_type = data.get("therapy_type")
+
+    print(user_id, task_id,therapy_type)
+
+    # Update the appropriate table's task status to true based on therapy_type and task_id
+    # Example update logic:
+    if therapy_type == "depression":
+        DepressionTasks.query.filter_by(user_id=user_id).update({f"task{task_id}": True})
+    elif therapy_type == "anxiety":
+        AnxietyTasks.query.filter_by(user_id=user_id).update({f"task{task_id}": True})
+    elif therapy_type == "stress":
+        StressTasks.query.filter_by(user_id=user_id).update({f"task{task_id}": True})
+
+    db.session.commit()
+
+    return jsonify(message="Task marked as complete successfully")
+
+# Don't forget to import necessary modules and classes (DepressionTasks, AnxietyTasks, StressTasks, db) in your Flask app
+
 
 
 
