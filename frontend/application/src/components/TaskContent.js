@@ -178,7 +178,7 @@ const TaskContent = ({ userDetails }) => {
             <i class="bi bi-quote quote"></i>
             <p>{taskDescription}</p>
             <i class="bi bi-quote right quote-right quote"></i>
-            {/* <img src={taskIcon} alt="Task Icon" /> */}
+            <img className="task-image" src={taskIcon} alt="Task Icon" />
           </div>
           <span
             className="mark-button"

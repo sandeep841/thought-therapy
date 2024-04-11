@@ -180,3 +180,10 @@
   color: rgba(172, 255, 47, 0);
   font-size: 20px;
 }
+
+.task-image {
+  margin-top: 10px;
+  margin-right: 10%;
+  width: 20%;
+  height: 20%;
+}
