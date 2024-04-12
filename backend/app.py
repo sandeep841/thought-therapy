@@ -395,8 +395,6 @@ def mark_task_complete():
     task_id = data.get("task_id")
     therapy_type = data.get("therapy_type")
 
-    print(user_id, task_id,therapy_type)
-
     # Update the appropriate table's task status to true based on therapy_type and task_id
     # Example update logic:
     if therapy_type == "depression":

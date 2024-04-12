@@ -9,10 +9,18 @@ const TaskContent = ({ userDetails }) => {
   const { depression_level, anxiety_level, stress_level } = userDetails;
   const [expandedTasks, setExpandedTasks] = useState({});
   const [depressionTasks, setDepressionTasks] = useState({});
+  const [anxietyTasks, setAnxietyTasks] = useState({});
+  const [stressTasks, setStressTasks] = useState({});
 
   useEffect(() => {
     if (userDetails && userDetails.depression_tasks) {
       setDepressionTasks(userDetails.depression_tasks);
+    }
+    if (userDetails && userDetails.anxiety_tasks) {
+      setAnxietyTasks(userDetails.anxiety_tasks);
+    }
+    if (userDetails && userDetails.stress_tasks) {
+      setStressTasks(userDetails.stress_tasks);
     }
   }, [userDetails]);
 
@@ -21,6 +29,45 @@ const TaskContent = ({ userDetails }) => {
       ...prevExpandedTasks,
       [taskId]: !prevExpandedTasks[taskId],
     }));
+  };
+
+  const markTaskAsComplete = async (user_id, taskId, therapyType) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/mark-task-complete",
+        {
+          user_id: user_id,
+          task_id: taskId,
+          therapy_type: therapyType,
+        }
+      );
+      console.log(response.data.message); // Log the response message
+
+      switch (therapyType) {
+        case "depression":
+          setDepressionTasks((prevTasks) => ({
+            ...prevTasks,
+            [`task${taskId}`]: true,
+          }));
+          break;
+        case "anxiety":
+          setAnxietyTasks((prevTasks) => ({
+            ...prevTasks,
+            [`task${taskId}`]: true,
+          }));
+          break;
+        case "stress":
+          setStressTasks((prevTasks) => ({
+            ...prevTasks,
+            [`task${taskId}`]: true,
+          }));
+          break;
+        default:
+          break;
+      }
+    } catch (error) {
+      console.error("Error marking task as complete:", error);
+    }
   };
 
   const renderTherapySections = () => {
@@ -96,9 +143,31 @@ const TaskContent = ({ userDetails }) => {
                       <div key={anxietyLevelTasks.therapy_level}>
                         <h3>{anxietyLevelTasks.therapy_level}</h3>
                         {anxietyLevelTasks.tasks.map((task) => (
-                          <div key={task.task_id}>
-                            <span>{task.task_title}</span>
-                            <p>{task.info[0].task_description}</p>
+                          <div
+                            className={`task-section ${
+                              expandedTasks[task.task_id] ? "expanded" : ""
+                            }`}
+                            key={task.task_id}
+                            onClick={() => toggleTaskExpansion(task.task_id)}
+                          >
+                            <i
+                              className={`bi bi-check-circle-fill ${
+                                anxietyTasks[`task${task.task_id}`]
+                                  ? "done"
+                                  : ""
+                              }`}
+                            ></i>
+                            <span className="task-title">
+                              {task.task_title}
+                            </span>
+                            <TaskDescription
+                              taskDescription={task.info[0].task_description}
+                              taskIcon={task.info[0].task_icon}
+                              expanded={expandedTasks[task.task_id]}
+                              user_id={userDetails.user_id}
+                              taskId={task.task_id}
+                              therapyType="anxiety"
+                            />
                           </div>
                         ))}
                       </div>
@@ -126,9 +195,29 @@ const TaskContent = ({ userDetails }) => {
                       <div key={stressLevelTasks.therapy_level}>
                         <h3>{stressLevelTasks.therapy_level}</h3>
                         {stressLevelTasks.tasks.map((task) => (
-                          <div key={task.task_id}>
-                            <span>{task.task_title}</span>
-                            <p>{task.info[0].task_description}</p>
+                          <div
+                            className={`task-section ${
+                              expandedTasks[task.task_id] ? "expanded" : ""
+                            }`}
+                            key={task.task_id}
+                            onClick={() => toggleTaskExpansion(task.task_id)}
+                          >
+                            <i
+                              className={`bi bi-check-circle-fill ${
+                                stressTasks[`task${task.task_id}`] ? "done" : ""
+                              }`}
+                            ></i>
+                            <span className="task-title">
+                              {task.task_title}
+                            </span>
+                            <TaskDescription
+                              taskDescription={task.info[0].task_description}
+                              taskIcon={task.info[0].task_icon}
+                              expanded={expandedTasks[task.task_id]}
+                              user_id={userDetails.user_id}
+                              taskId={task.task_id}
+                              therapyType="stress"
+                            />
                           </div>
                         ))}
                       </div>
@@ -189,26 +278,6 @@ const TaskContent = ({ userDetails }) => {
         </div>
       </div>
     );
-  };
-
-  const markTaskAsComplete = async (user_id, taskId, therapyType) => {
-    try {
-      const response = await axios.post(
-        "http://localhost:5000/mark-task-complete",
-        {
-          user_id: user_id,
-          task_id: taskId,
-          therapy_type: therapyType,
-        }
-      );
-      console.log(response.data.message); // Log the response message
-      setDepressionTasks((prevTasks) => ({
-        ...prevTasks,
-        [`task${taskId}`]: true,
-      }));
-    } catch (error) {
-      console.error("Error marking task as complete:", error);
-    }
   };
 
   return renderTherapySections();
