@@ -151,6 +151,8 @@ def login():
 
     try:
         if user and bcrypt.check_password_hash(user.password, password):
+            ActiveUser.query.delete()
+            
             active_user = ActiveUser.query.filter_by(user_id=user.user_id).first()
 
             if active_user:

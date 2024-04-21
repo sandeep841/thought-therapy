@@ -37,9 +37,9 @@ const Header = ({ isLoggedIn, showLogin, setShowLogin, handleLogout }) => {
               Dashboard
             </Link>
             <Link
-              to="/"
+              to="/MainPage"
               className={`menu-button ${
-                location.pathname === "/" ? "active" : ""
+                location.pathname === "/MainPage" ? "active" : ""
               }`}
             >
               Programs

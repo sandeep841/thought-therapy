@@ -694,117 +694,96 @@
         "tasks": [
           {
             "task_id": "1",
-            "task_title": "Cognitive Behavioural Therapy (CBT)",
+            "task_title": "Walking",
             "info": [
               {
-                "task_icon": "images/Anxiety/Mild Anxiety/1.jpg",
-                "task_description": "Work with a therapist to learn cognitive restructuring techniques and develop coping strategies for managing anxious thoughts."
+                "task_icon": "images/Anxiety/Moderate Anxiety/1.jpg",
+                "task_description": "Taking a brisk walk in nature or around your neighborhood can help reduce anxiety and clear your mind."
               }
             ]
           },
           {
             "task_id": "2",
-            "task_title": "Relaxation Audio Recordings",
+            "task_title": "Swimming",
             "info": [
               {
-                "task_icon": "images/Anxiety/Mild Anxiety/2.jpg",
-                "task_description": "Listen to guided imagery or progressive relaxation recordings to induce a state of calmness."
+                "task_icon": "images/Anxiety/Moderate Anxiety/2.jpg",
+                "task_description": "Swimming is a low-impact exercise that can help you relax and focus on your breathing."
               }
             ]
           },
           {
             "task_id": "3",
-            "task_title": "Self-Compassion Practices",
+            "task_title": "Dancing",
             "info": [
               {
-                "task_icon": "images/Anxiety/Mild Anxiety/3.jpg",
-                "task_description": "Practice self-compassion exercises to cultivate kindness and understanding toward oneself during times of stress."
+                "task_icon": "images/Anxiety/Moderate Anxiety/3.jpg",
+                "task_description": "Dancing is not only fun but also a great way to release tension and boost your mood."
               }
             ]
           },
           {
             "task_id": "4",
-            "task_title": "Aromatherapy",
+            "task_title": "Photography",
             "info": [
               {
-                "task_icon": "images/Anxiety/Mild Anxiety/4.jpg",
-                "task_description": "Use essential oils like lavender, chamomile, or bergamot to create a calming atmosphere and reduce anxiety symptoms."
+                "task_icon": "images/Anxiety/Moderate Anxiety/4.jpg",
+                "task_description": "Take a camera or your smartphone and go for a walk, capturing moments that catch your eye."
               }
             ]
           },
           {
             "task_id": "5",
-            "task_title": "Grounding Techniques",
+            "task_title": "Gentle gardening",
             "info": [
               {
-                "task_icon": "images/Anxiety/Mild Anxiety/5.jpg",
-                "task_description": "Use sensory grounding techniques, such as focusing on five things you can see, hear, touch, smell, and taste, to bring attention back to the present moment."
+                "task_icon": "images/Anxiety/Moderate Anxiety/5.jpg",
+                "task_description": "Spend time tending to plants or flowers in your garden or indoor space."
               }
             ]
           },
           {
             "task_id": "6",
-            "task_title": "Volunteering",
+            "task_title": "Cooking or baking",
             "info": [
               {
-                "task_icon": "images/Anxiety/Mild Anxiety/6.jpg",
-                "task_description": "Engage in volunteering activities to shift focus away from personal worries and gain a sense of purpose."
+                "task_icon": "images/Anxiety/Moderate Anxiety/6.jpg",
+                "task_description": "Engage in the creative and sensory experience of cooking or baking."
               }
             ]
           },
           {
             "task_id": "7",
-            "task_title": "Limiting News Intake",
+            "task_title": "Stretching",
             "info": [
               {
-                "task_icon": "images/Anxiety/Mild Anxiety/7.jpg",
-                "task_description": "Reduce exposure to news and social media to avoid overwhelming information that may exacerbate anxiety."
+                "task_icon": "images/Anxiety/Moderate Anxiety/7.jpg",
+                "task_description": "Perform gentle stretching exercises to release tension in your muscles and promote relaxation."
               }
             ]
           },
           {
             "task_id": "8",
-            "task_title": "Time Management Strategies",
+            "task_title": "Biking",
             "info": [
               {
-                "task_icon": "images/Anxiety/Mild Anxiety/8.jpg",
-                "task_description": "Implement effective time management techniques to reduce stress related to deadlines and responsibilities."
+                "task_icon": "images/Anxiety/Moderate Anxiety/8.jpg",
+                "task_description": "Cycling is a great way to get some exercise while enjoying the outdoors."
               }
             ]
           },
           {
             "task_id": "9",
-            "task_title": "Problem-Solving Skills",
+            "task_title": "Art or Crafting",
             "info": [
               {
-                "task_icon": "images/Anxiety/Mild Anxiety/9.jpg",
-                "task_description": "Learn and apply problem-solving skills to address specific stressors and regain a sense of control."
-              }
-            ]
-          },
-          {
-            "task_id": "10",
-            "task_title": "Progressive Exposure",
-            "info": [
-              {
-                "task_icon": "images/Anxiety/Mild Anxiety/10.jpg",
-                "task_description": "Gradually expose yourself to feared situations or triggers in a controlled manner to desensitize anxiety responses."
-              }
-            ]
-          },
-          {
-            "task_id": "11",
-            "task_title": "Humour Therapy",
-            "info": [
-              {
-                "task_icon": "images/Anxiety/Mild Anxiety/11.jpg",
-                "task_description": "Incorporate humour into daily life through watching comedies, sharing jokes, or engaging in laughter yoga to promote relaxation."
+                "task_icon": "images/Anxiety/Moderate Anxiety/9.jpg",
+                "task_description": "Engaging in creative activities like painting, drawing, knitting, or crafting."
               }
             ]
           }
         ]
       },
-
       {
         "therapy_level": "Severe",
         "tasks": [

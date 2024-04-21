@@ -129,7 +129,7 @@ const TaskContent = ({ userDetails }) => {
           )}
           {anxiety_level !== null && anxiety_level !== undefined && (
             <section id="anxiety-section">
-              <h2>Anxiety Therapy</h2>
+              <h2>Anxiety Therapy- {anxiety_level} </h2>
               {task_info
                 .filter((task) => task.therapy === "anxiety") // Filter only anxiety tasks
                 .map((task) => {
@@ -141,7 +141,6 @@ const TaskContent = ({ userDetails }) => {
                   if (anxietyLevelTasks) {
                     return (
                       <div key={anxietyLevelTasks.therapy_level}>
-                        <h3>{anxietyLevelTasks.therapy_level}</h3>
                         {anxietyLevelTasks.tasks.map((task) => (
                           <div
                             className={`task-section ${
@@ -181,7 +180,7 @@ const TaskContent = ({ userDetails }) => {
 
           {stress_level !== null && stress_level !== undefined && (
             <section id="stress-section">
-              <h2>Stress Therapy</h2>
+              <h2>Stress Therapy- {stress_level} </h2>
               {task_info
                 .filter((task) => task.therapy === "stress") // Filter only stress tasks
                 .map((task) => {
@@ -193,7 +192,6 @@ const TaskContent = ({ userDetails }) => {
                   if (stressLevelTasks) {
                     return (
                       <div key={stressLevelTasks.therapy_level}>
-                        <h3>{stressLevelTasks.therapy_level}</h3>
                         {stressLevelTasks.tasks.map((task) => (
                           <div
                             className={`task-section ${
@@ -243,7 +241,7 @@ const TaskContent = ({ userDetails }) => {
               <br />
               Take a program now.
             </p>
-            <Link to="/" className="program-link">
+            <Link to="/MainPage" className="program-link">
               Take program
             </Link>
           </div>
@@ -264,10 +262,14 @@ const TaskContent = ({ userDetails }) => {
       <div>
         <div className={`task-description ${expanded ? "expanded" : ""}`}>
           <div>
-            <i class="bi bi-quote quote"></i>
-            <p>{taskDescription}</p>
-            <i class="bi bi-quote right quote-right quote"></i>
-            <img className="task-image" src={taskIcon} alt="Task Icon" />
+            <div className="quoted-disc">
+              <i class="bi bi-quote quote"></i>
+              <p>{taskDescription}</p>
+              <i class="bi bi-quote right quote-right quote"></i>
+            </div>
+            <div className="image-container">
+              <img src={taskIcon} alt="Task Icon" />
+            </div>
           </div>
           <span
             className="mark-button"

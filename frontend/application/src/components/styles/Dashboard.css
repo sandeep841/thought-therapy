@@ -7,7 +7,7 @@
 .dashboard-container {
   align-items: center;
   width: auto;
-  margin-left: 290px;
+  margin-left: 260px;
   flex-grow: 1;
   background-size: cover;
   background-position: center;
@@ -19,7 +19,8 @@
 .welcome-message {
   width: 100%;
   margin-top: 10px;
-  padding: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   text-align: center;
   font-size: 70px;
   font-weight: 600;
@@ -62,9 +63,9 @@
 /* Added styles for dashboard-container sections */
 
 .dashboard-container section {
+  margin-right: 5px;
   width: 100%;
   height: fit-content;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   background-color: rgba(255, 255, 255, 0.9);
@@ -116,7 +117,8 @@
 
 .task-section {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.24);
-  margin: 5px 10px;
+  width: 95%;
+  margin: 5px;
   padding: 10px;
   border-radius: 5px;
 }
@@ -128,16 +130,22 @@
 }
 .task-description div {
   display: flex;
+  align-items: center;
 }
 
 .task-description {
   display: flex;
   flex-direction: column;
   padding: 0.25em;
+  padding-left: 5vh;
   height: 0;
   overflow: hidden;
   transition: height 0.3s ease;
   align-items: center;
+}
+
+.task-description p {
+  max-width: 110vh;
 }
 
 .task-description.expanded {
@@ -147,12 +155,19 @@
 .task-section.expanded {
   margin-top: 15px;
   border-left: 6px solid #3d3c3cbd;
-  transform: scale(1.04);
-  transition: 0.3s;
+  transform: scale(1.01);
+  transition: tra0.3s;
 }
+
+.quoted-disc {
+  margin-bottom: 10vh;
+  max-width: 90vh;
+}
+
 .quote {
-  margin-top: 10px;
+  margin-bottom: 40px;
 }
+
 .quote-right {
   transform: rotateY(180deg);
 }
@@ -181,9 +196,31 @@
   font-size: 20px;
 }
 
-.task-image {
-  margin-top: 10px;
-  margin-right: 10%;
-  width: 20%;
-  height: 20%;
+.image-container {
+  position: relative;
+  width: 22vh; /* Adjust width as needed (5 times the image width) */
+  height: auto; /* Automatically adjust height */
+  margin: 30px; /* Center align */
+  perspective: 1000px; /* Perspective for 3D effect */
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px; /* Rounded corners for the cuboid effect */
+  position: relative; /* Position the image relatively */
+  z-index: 1; /* Ensure the image is on top of the background */
+}
+
+.image-container::before {
+  content: "";
+  position: absolute;
+  left: 15%;
+  top: 15%;
+  width: 100%; /* 5 times the image width */
+  height: 100%; /* 5 times the image height */
+  background-color: #393938; /* Background color */
+  z-index: -1; /* Place the background behind the image */
+  border-radius: 20px; /* Rounded corners for the background */
 }

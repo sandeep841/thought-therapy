@@ -5,11 +5,13 @@ import depressionImage from "../assets/depression_wrap.png";
 import anxietyImage from "../assets/anxiety.jpg";
 import stressImage from "../assets/stress.jpg";
 import "../components/styles/MainPage.css";
+import background from "../assets/program_page_title.png";
 
 const MainPage = () => {
   return (
     <div>
-      <h1 className="PageTitle">Programs</h1>
+      <img className="PageTitle" src={background} alt="Program Page" />
+      <h1 className="PageTitle-text">Programs</h1>
       <div className="cards-section">
         <Link to="/depression-therapy" className="therapy-card">
           <img src={depressionImage} alt="Depression Therapy" />

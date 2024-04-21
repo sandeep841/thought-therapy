@@ -9,6 +9,7 @@ import AnxietyTherapy from "./components/programs/AnxietyTherapy";
 import StressTherapy from "./components/programs/StressTherapy";
 import Header from "./components/Header";
 import Dashboard from "./components/Dashboard";
+import Home from "./components/Home";
 import "./components/styles/App.css";
 
 function App() {
@@ -53,7 +54,7 @@ function App() {
               path="/"
               element={
                 isLoggedIn ? (
-                  <MainPage />
+                  <Home />
                 ) : showLogin ? (
                   <Login handleLogin={handleLogin} />
                 ) : (
@@ -61,6 +62,8 @@ function App() {
                 )
               }
             />
+            <Route path="/Home" element={<Home />} />
+            <Route path="/MainPage" element={<MainPage />} />
             <Route path="/depression-therapy" element={<DepressionTherapy />} />
             <Route path="/anxiety-therapy" element={<AnxietyTherapy />} />
             <Route path="/stress-therapy" element={<StressTherapy />} />
