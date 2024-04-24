@@ -1118,67 +1118,66 @@
         "tasks": [
           {
             "task_id": "1",
-            "task_title": "Guided Imagery",
+            "task_title": "Regular Physical Activity",
             "info": [
               {
-                "task_icon": "images/Stress/Mild Stress/1.jpg",
-                "task_description": "Visualize a peaceful scene or scenario to promote relaxation and reduce tension."
+                "task_icon": "images/Stress/Moderate Stress/1.jpg",
+                "task_description": "Incorporate regular exercise into your routine, such as walking, jogging, or swimming, to reduce stress hormones and improve mood."
               }
             ]
           },
           {
             "task_id": "2",
-            "task_title": "Progressive Muscle Relaxation (PMR)",
+            "task_title": "Mindfulness Practices",
             "info": [
               {
-                "task_icon": "images/Stress/Mild Stress/2.jpg",
-                "task_description": "Practice tensing and then relaxing different muscle groups to release physical tension."
+                "task_icon": "images/Stress/Moderate Stress/2.jpg",
+                "task_description": "Practice mindfulness meditation or deep breathing exercises to bring focus to the present moment and alleviate stress."
               }
             ]
           },
           {
             "task_id": "3",
-            "task_title": "Limit Caffeine and Alcohol",
+            "task_title": "Social Connection",
             "info": [
               {
-                "task_icon": "images/Stress/Mild Stress/3.jpg",
-                "task_description": "Reduce consumption of stimulants and depressants, as they can exacerbate stress."
+                "task_icon": "images/Stress/Moderate Stress/3.jpg",
+                "task_description": "Spend time with supportive friends, family members, or colleagues to find comfort and distraction from stressors."
               }
             ]
           },
           {
             "task_id": "4",
-            "task_title": "Take a Warm Bath",
+            "task_title": "Creative Outlets",
             "info": [
               {
-                "task_icon": "images/Stress/Mild Stress/4.jpg",
-                "task_description": "Soaking in a warm bath can soothe muscles and calm the mind."
+                "task_icon": "images/Stress/Moderate Stress/4.jpg",
+                "task_description": "Explore creative activities like painting, writing, or playing music to express yourself and relieve stress."
               }
             ]
           },
           {
             "task_id": "5",
-            "task_title": "Deep Breathing Exercises",
+            "task_title": "Healthy Boundaries",
             "info": [
               {
-                "task_icon": "images/Stress/Mild Stress/5.jpg",
-                "task_description": "Practice deep breathing techniques like 4-7-8 breathing or belly breathing for relaxation."
+                "task_icon": "images/Stress/Moderate Stress/5.jpg",
+                "task_description": "Set boundaries to protect your time and energy, saying no to additional commitments and prioritizing self-care."
               }
             ]
           },
           {
             "task_id": "6",
-            "task_title": "Connect with Nature",
+            "task_title": "Self-Care Rituals",
             "info": [
               {
-                "task_icon": "images/Stress/Mild Stress/6.jpg",
-                "task_description": "Spend time outdoors, whether it's going for a hike, sitting in a park, or simply taking in the scenery."
+                "task_icon": "images/Stress/Moderate Stress/6.jpg",
+                "task_description": "Incorporate self-care practices like taking a warm bath, practicing yoga, or indulging in a hobby to recharge and manage stress."
               }
             ]
           }
         ]
       },
-
       {
         "therapy_level": "Severe",
         "tasks": [
