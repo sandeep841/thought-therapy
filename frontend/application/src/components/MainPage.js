@@ -16,16 +16,25 @@ const MainPage = () => {
         <Link to="/depression-therapy" className="therapy-card">
           <img src={depressionImage} alt="Depression Therapy" />
           <h2>Depression Therapy</h2>
+          <Link to="/depression-symptoms" className="symptoms-link">
+            <h3>symptoms</h3>
+          </Link>
         </Link>
 
         <Link to="/anxiety-therapy" className="therapy-card">
           <img src={anxietyImage} alt="Anxiety Therapy" />
           <h2>Anxiety Therapy</h2>
+          <Link to="/anxiety-symptoms" className="symptoms-link">
+            <h3>symptoms</h3>
+          </Link>
         </Link>
 
         <Link to="/stress-therapy" className="therapy-card">
           <img src={stressImage} alt="Stress Therapy" />
           <h2>Stress Therapy</h2>
+          <Link to="/stress-symptoms" className="symptoms-link">
+            <h3>symptoms</h3>
+          </Link>
         </Link>
       </div>
     </div>

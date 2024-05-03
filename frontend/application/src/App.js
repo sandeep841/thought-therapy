@@ -7,6 +7,10 @@ import Signup from "./components/Signup";
 import DepressionTherapy from "./components/programs/DepressionTherapy";
 import AnxietyTherapy from "./components/programs/AnxietyTherapy";
 import StressTherapy from "./components/programs/StressTherapy";
+import DepressionSymptoms from "./components/programs/DepressionSymptoms";
+import AnxietySymptoms from "./components/programs/AnxietySymptoms";
+import StressSymptoms from "./components/programs/StressSymptoms";
+
 import Header from "./components/Header";
 import Dashboard from "./components/Dashboard";
 import Home from "./components/Home";
@@ -68,6 +72,12 @@ function App() {
             <Route path="/anxiety-therapy" element={<AnxietyTherapy />} />
             <Route path="/stress-therapy" element={<StressTherapy />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route
+              path="/depression-symptoms"
+              element={<DepressionSymptoms />}
+            />
+            <Route path="/anxiety-symptoms" element={<AnxietySymptoms />} />
+            <Route path="/stress-symptoms" element={<StressSymptoms />} />
           </Routes>
         </div>
       </div>
