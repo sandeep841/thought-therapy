@@ -58,7 +58,7 @@ const StressSymptoms = () => {
   ];
 
   return (
-    <div>
+    <div className="symptoms-main">
       <h1>Stress Symptoms</h1>
       <div className="symptoms-container">
         {symptoms.map((symptom, index) => (

@@ -51,7 +51,7 @@ const DepressionSymptoms = () => {
   ];
 
   return (
-    <div>
+    <div className="symptoms-main">
       <h1>Depression Symptoms</h1>
       <div className="symptoms-container">
         {symptoms.map((symptom, index) => (

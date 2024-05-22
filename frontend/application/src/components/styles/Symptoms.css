@@ -1,3 +1,7 @@
+.symptoms-main {
+  margin-left: 15px;
+}
+
 .symptoms-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
